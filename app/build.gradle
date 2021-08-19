@@ -53,8 +53,8 @@ dependencies {
 
 
     // Material Design
-    implementation "com.google.android.material:material:$version_material"
 
+    implementation "com.google.android.material:material:$version_material"
 
 
     // Navigation
