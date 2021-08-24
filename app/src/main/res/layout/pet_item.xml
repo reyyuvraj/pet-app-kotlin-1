@@ -47,14 +47,17 @@
             android:layout_toEndOf="@id/iv_profilepic"
             app:cardBackgroundColor="#455A64"
             app:cardCornerRadius="100dp">
-
-        <ImageView
-            android:layout_width="7dp"
-            android:layout_height="14dp"
-            android:layout_marginStart="154.5dp"
-            android:layout_marginTop="21.5dp"
-            android:layout_toEndOf="@id/iv_profilepic"
-            android:src="@drawable/arrow"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="13dp"
+                    android:src="@drawable/arrow"/>
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView

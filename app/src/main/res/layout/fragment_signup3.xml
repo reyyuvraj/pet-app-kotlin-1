@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <ImageView
+          android:layout_width="277dp"
+          android:layout_height="255dp"
+          android:src="@drawable/leaves"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="30dp"/>
+      
+      <ImageView
+          android:id="@+id/iv_signup3"
+          android:layout_width="158dp"
+          android:layout_height="198dp"
+          android:src="@drawable/signup3"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="80dp"
+          android:layout_marginTop="30dp"/>
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_below="@id/iv_signup3">
+
+          <TextView
+              android:id="@+id/tv_yourpet"
+              android:layout_width="match_parent"
+              android:layout_height="54dp"
+              android:layout_marginLeft="25dp"
+              android:fontFamily="@font/poppins_medium"
+              android:text="Your Pet"
+              android:textColor="@color/black"
+              android:textSize="36sp" />
+
+          <TextView
+              android:id="@+id/tv_category"
+              android:layout_width="match_parent"
+              android:layout_height="30dp"
+              android:layout_below="@id/tv_yourpet"
+              android:layout_marginLeft="25dp"
+              android:layout_marginTop="30dp"
+              android:fontFamily="@font/poppins_medium"
+              android:text="Category"
+              android:textColor="@color/black"
+              android:textSize="20sp" />
+
+          <LinearLayout
+              android:id="@+id/lr_row1"
+              android:layout_width="match_parent"
+              android:layout_height="46dp"
+              android:layout_below="@id/tv_category"
+              android:layout_marginTop="20dp"
+              android:orientation="horizontal">
+
+              <RelativeLayout
+                  android:id="@+id/bt_dog"
+                  android:layout_width="105dp"
+                  android:layout_height="46dp"
+                  android:layout_below="@id/tv_category"
+                  android:layout_marginLeft="25dp">
+
+                  <ImageView
+                      android:layout_width="105dp"
+                      android:layout_height="46dp"
+                      android:src="@drawable/rectangle" />
+
+                  <ImageView
+                      android:id="@+id/iv_dog"
+                      android:layout_width="20dp"
+                      android:layout_height="20dp"
+                      android:layout_marginLeft="18dp"
+                      android:layout_marginTop="12dp"
+                      android:layout_marginBottom="10dp"
+                      android:src="@drawable/dog" />
+
+                  <TextView
+                      android:layout_width="33dp"
+                      android:layout_height="24dp"
+                      android:layout_marginLeft="14dp"
+                      android:layout_marginTop="12dp"
+                      android:layout_marginBottom="10dp"
+                      android:layout_toRightOf="@id/iv_dog"
+                      android:fontFamily="@font/poppins_medium"
+                      android:text="Dog"
+                      android:textColor="#455A64"
+                      android:textSize="15sp" />
+              </RelativeLayout>
+
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/bt_cat"
+                  android:layout_width="90dp"
+                  android:layout_height="46dp"
+                  android:layout_below="@id/tv_category"
+                  android:layout_marginLeft="16dp"
+                  android:layout_toRightOf="@id/bt_dog"
+                  app:cardBackgroundColor="#455A64"
+                  app:cardCornerRadius="43dp">
+
+
+                  <LinearLayout
+                      android:layout_width="100dp"
+                      android:layout_height="match_parent">
+
+                      <ImageView
+                          android:id="@+id/iv_cat"
+                          android:layout_width="20dp"
+                          android:layout_height="20dp"
+                          android:layout_marginLeft="17dp"
+                          android:layout_marginTop="12dp"
+                          android:layout_marginBottom="10dp"
+                          android:src="@drawable/cat" />
+
+                      <TextView
+                          android:layout_width="33dp"
+                          android:layout_height="24dp"
+                          android:layout_marginLeft="10dp"
+                          android:layout_marginTop="12dp"
+                          android:layout_marginBottom="10dp"
+                          android:layout_toRightOf="@id/iv_cat"
+                          android:fontFamily="@font/poppins_medium"
+                          android:text="Cat"
+                          android:textColor="@color/white"
+                          android:textSize="15sp" />
+
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+
+              <RelativeLayout
+                  android:id="@+id/bt_bird"
+                  android:layout_width="105dp"
+                  android:layout_height="46dp"
+                  android:layout_below="@id/tv_category"
+                  android:layout_marginLeft="14dp"
+                  android:layout_toRightOf="@id/bt_cat">
+
+                  <ImageView
+                      android:layout_width="105dp"
+                      android:layout_height="46dp"
+                      android:src="@drawable/rectangle" />
+
+                  <ImageView
+                      android:id="@+id/iv_bird"
+                      android:layout_width="20dp"
+                      android:layout_height="20dp"
+                      android:layout_marginLeft="18dp"
+                      android:layout_marginTop="12dp"
+                      android:layout_marginBottom="10dp"
+                      android:src="@drawable/bird" />
+
+                  <TextView
+                      android:layout_width="33dp"
+                      android:layout_height="24dp"
+                      android:layout_marginLeft="14dp"
+                      android:layout_marginTop="12dp"
+                      android:layout_marginBottom="10dp"
+                      android:layout_toRightOf="@id/iv_bird"
+                      android:fontFamily="@font/poppins_medium"
+                      android:text="Bird"
+                      android:textColor="#455A64"
+                      android:textSize="15sp" />
+              </RelativeLayout>
+          </LinearLayout>
+
+          <LinearLayout
+              android:id="@+id/lr_row2"
+              android:layout_width="match_parent"
+              android:layout_height="46dp"
+              android:layout_below="@id/lr_row1"
+              android:layout_marginTop="10dp"
+              android:orientation="horizontal">
+
+              <RelativeLayout
+                  android:id="@+id/bt_fish"
+                  android:layout_width="105dp"
+                  android:layout_height="46dp"
+                  android:layout_below="@id/tv_category"
+                  android:layout_marginLeft="25dp">
+
+                  <ImageView
+                      android:layout_width="105dp"
+                      android:layout_height="46dp"
+                      android:src="@drawable/rectangle" />
+
+                  <ImageView
+                      android:id="@+id/iv_fish"
+                      android:layout_width="20dp"
+                      android:layout_height="20dp"
+                      android:layout_marginLeft="18dp"
+                      android:layout_marginTop="12dp"
+                      android:layout_marginBottom="10dp"
+                      android:src="@drawable/fish" />
+
+                  <TextView
+                      android:layout_width="33dp"
+                      android:layout_height="24dp"
+                      android:layout_marginLeft="14dp"
+                      android:layout_marginTop="12dp"
+                      android:layout_marginBottom="10dp"
+                      android:layout_toRightOf="@id/iv_fish"
+                      android:fontFamily="@font/poppins_medium"
+                      android:text="Fish"
+                      android:textColor="#455A64"
+                      android:textSize="15sp" />
+              </RelativeLayout>
+
+              <RelativeLayout
+                  android:id="@+id/bt_other"
+                  android:layout_width="120dp"
+                  android:layout_height="46dp"
+                  android:layout_gravity="center"
+                  android:layout_marginLeft="6dp"
+                  android:layout_toRightOf="@id/bt_fish">
+
+                  <ImageView
+                      android:layout_width="wrap_content"
+                      android:layout_height="46dp"
+                      android:src="@drawable/rectangle" />
+
+                  <TextView
+                      android:layout_width="55dp"
+                      android:layout_height="24dp"
+                      android:layout_centerInParent="true"
+                      android:layout_marginTop="12dp"
+                      android:fontFamily="@font/poppins_medium"
+                      android:text="Other"
+                      android:textSize="16sp" />
+              </RelativeLayout>
+          </LinearLayout>
+
+          <TextView
+              android:id="@+id/tv_breed"
+              android:layout_width="match_parent"
+              android:layout_height="30dp"
+              android:layout_below="@id/lr_row2"
+              android:layout_marginLeft="25dp"
+              android:layout_marginTop="15dp"
+              android:text="Breed"
+              android:fontFamily="@font/poppins_medium"
+              android:textColor="@color/black"
+              android:textSize="20sp" />
+          <com.google.android.material.textfield.TextInputLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/et_breed"
+              android:layout_below="@id/tv_breed"
+              android:layout_marginHorizontal="25dp"
+             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+              <AutoCompleteTextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@color/white"
+                  android:hint="Breed of your pet"/>
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <androidx.cardview.widget.CardView
+              android:layout_width="130dp"
+              android:id="@+id/btn_next"
+              android:layout_height="50dp"
+              android:layout_below="@id/et_breed"
+              android:layout_alignParentRight="true"
+              android:layout_marginHorizontal="25dp"
+              android:layout_marginTop="150dp"
+              app:cardBackgroundColor="#455A64"
+              app:cardCornerRadius="27dp">
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:gravity="center">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="30dp"
+                      android:gravity="center"
+                      android:text="Next"
+                      android:fontFamily="@font/poppins_medium"
+                      android:textColor="#FFFFFF"
+                      android:textSize="20sp" />
+
+
+              </LinearLayout>
+
+          </androidx.cardview.widget.CardView>
+
+
+      </RelativeLayout>
+
+
+
+
+
+
+
+
+
+          </RelativeLayout>
+</layout>

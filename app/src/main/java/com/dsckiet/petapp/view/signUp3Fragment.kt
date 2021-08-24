@@ -8,27 +8,27 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.dsckiet.petapp.R
-import com.dsckiet.petapp.databinding.FragmentLoginBinding
+import com.dsckiet.petapp.databinding.FragmentSignup3Binding
 
-class loginFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginBinding
+class signUp3Fragment : Fragment() {
+
+    private lateinit var binding: FragmentSignup3Binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_signup3, container, false)
 
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.loginbtn.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signup2Fragment)
+        binding.btnNext.setOnClickListener {
+            findNavController().navigate(R.id.action_signup3Fragment_to_signUp4Fragment)
         }
     }
+
 
 }

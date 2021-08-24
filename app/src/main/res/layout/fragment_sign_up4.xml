@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="277dp"
+        android:layout_height="255dp"
+        android:src="@drawable/leaves"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"/>
+
+    <ImageView
+        android:id="@+id/iv_signup3"
+        android:layout_width="158dp"
+        android:layout_height="198dp"
+        android:src="@drawable/signup3"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="30dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/iv_signup3">
+
+            <TextView
+                android:id="@+id/tv_yourpet"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Your Pet"
+                android:textColor="@color/black"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/tv_buddy"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/tv_yourpet"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Your buddy's name is"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_buddy"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="10dp"
+                android:hint="Name of your pet" />
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/et_name"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Gender"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:id="@+id/btn_male"
+                android:layout_width="153dp"
+                android:layout_height="52dp"
+                android:layout_below="@id/tv_gender"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="153dp"
+                    android:layout_height="52dp"
+                    android:src="@drawable/rectangle2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="Male"
+                    android:textColor="#455A64"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_female"
+                android:layout_width="153dp"
+                android:layout_height="52dp"
+                android:layout_below="@id/tv_gender"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/btn_male"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="153dp"
+                    android:layout_height="52dp"
+                    android:src="@drawable/rectangle2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="Female"
+                    android:textColor="#455A64"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_little"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/btn_male"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="A little about him/her"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="73dp"
+                android:layout_height="24dp"
+                android:layout_below="@id/btn_female"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="21dp"
+                android:layout_toRightOf="@id/tv_little"
+                android:text="40 words"
+                android:textColor="#BDBDBD"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_about"
+                android:layout_width="match_parent"
+                android:layout_height="142dp"
+                android:layout_below="@id/tv_little"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_input"
+                android:gravity="top"
+                android:paddingLeft="8dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_next"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/et_about"
+                android:layout_alignParentRight="true"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="25dp"
+                app:cardBackgroundColor="#455A64"
+                app:cardCornerRadius="27dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:text="Next"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

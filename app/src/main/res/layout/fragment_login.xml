@@ -10,6 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         tools:context=".view.loginActivity">
 
         <ImageView
@@ -25,6 +26,7 @@
             android:layout_height="40dp"
             android:layout_below="@id/iv_login"
             android:layout_marginStart="25dp"
+            android:fontFamily="@font/poppins_medium"
             android:text="Log-in"
             android:textColor="#000000"
             android:textSize="30sp" />
@@ -41,6 +43,7 @@
                 android:layout_height="25dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Email"
                 android:textColor="#000000"
                 android:textSize="18sp" />
@@ -67,6 +70,7 @@
                 android:layout_below="@id/et_email"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Password"
                 android:textColor="#000000"
                 android:textSize="18sp" />
@@ -95,6 +99,7 @@
                 android:layout_below="@id/et_password"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="25dp"
+                android:fontFamily="@font/poppins"
                 android:gravity="end"
                 android:text="Forget password?" />
 
@@ -116,6 +121,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
+                        android:fontFamily="@font/poppins_medium"
                         android:gravity="center"
                         android:text="Login"
                         android:textColor="@color/white"
@@ -130,6 +136,7 @@
                 android:layout_below="@id/loginbtn"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
+                android:fontFamily="@font/poppins"
                 android:text="Don't have an account?Sign-Up"
                 android:textColor="#A09999"
                 android:textSize="14sp" />
@@ -157,6 +164,7 @@
                     android:layout_below="@id/tv_noAccnt"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:fontFamily="@font/poppins"
                     android:text="Or login using"
                     android:textColor="#A09999"
                     android:textSize="14sp" />
