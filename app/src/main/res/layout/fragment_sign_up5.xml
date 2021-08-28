@@ -24,15 +24,20 @@
             android:id="@+id/tv_add"
             android:gravity="center"/>
 
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:layout_width="261dp"
-            android:layout_height="261dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="260dp"
+            android:layout_height="260dp"
             android:id="@+id/iv_image"
             android:layout_below="@id/tv_add"
             android:layout_marginTop="65dp"
             android:layout_marginHorizontal="75dp"
-            android:src="@drawable/blank"
-            />
+            app:cardCornerRadius="130dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/upload_img"/>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="130dp"
