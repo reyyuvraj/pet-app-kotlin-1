@@ -33,7 +33,7 @@
         android:src="@drawable/profile"
         />
         <androidx.cardview.widget.CardView
-            android:id="@+id/loginbtn"
+            android:id="@+id/finishbtn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@id/iv_Upimage"

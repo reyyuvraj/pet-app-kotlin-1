@@ -33,6 +33,7 @@
             android:layout_height="36dp"
             android:layout_marginStart="19dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:layout_toEndOf="@id/iv_profilepic"
             android:text="Pet Name"
             android:textColor="#455A64"
@@ -67,6 +68,7 @@
             android:text="Breed"
             android:layout_marginTop="47dp"
             android:layout_marginStart="19dp"
+            android:fontFamily="@font/poppins_medium"
             android:textSize="16dp"
             android:textColor="#455A64"/>
         <TextView
@@ -74,6 +76,7 @@
             android:layout_height="24dp"
             android:layout_toEndOf="@id/iv_profilepic"
             android:text="Pet Age"
+            android:fontFamily="@font/poppins_medium"
             android:layout_marginTop="76dp"
             android:layout_marginStart="19dp"
             android:textSize="16sp"
@@ -93,6 +96,7 @@
             android:layout_marginStart="51dp"
             android:layout_toEndOf="@id/iv_profilepic"
             android:layout_marginTop="128dp"
+            android:fontFamily="@font/poppins_medium"
             android:text="Distance: 4Km"
             android:textColor="#455A64"
             android:textSize="16sp"/>

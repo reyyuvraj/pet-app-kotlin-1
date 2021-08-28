@@ -35,6 +35,7 @@
                 android:layout_height="24dp"
                 android:layout_marginLeft="185dp"
                 android:text="lucknow"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
 
@@ -71,24 +72,27 @@
                 android:layout_marginStart="30dp"
                 android:height="27dp"
                 android:text="Pet Categories"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="56dp"
                 android:layout_below="@id/txt1"
                 android:layout_marginTop="15dp"
-                android:orientation="horizontal" />
+                android:orientation="horizontal"
+                tools:itemCount="5"
+                tools:listitem="@layout/home_category_item"/>
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/RV_bott"
             android:layout_marginTop="30dp"
-            android:id="@+id/rl_card"
             android:background="@drawable/corner_radius">
 
             <TextView
@@ -96,6 +100,7 @@
                 android:layout_height="24dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_medium"
                 android:layout_marginEnd="15dp"
                 android:text="sort by"
                 android:textColor="#455A64" />
@@ -105,7 +110,7 @@
                 android:id="@+id/rv_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="59dp"
+                android:layout_marginTop="49dp"
                 android:background="#E5E5E5"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"

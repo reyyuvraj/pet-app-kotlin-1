@@ -54,6 +54,7 @@
               android:textColor="@color/black"
               android:textSize="20sp" />
 
+          <!--
           <LinearLayout
               android:id="@+id/lr_row1"
               android:layout_width="match_parent"
@@ -171,102 +172,50 @@
                       android:textSize="15sp" />
               </RelativeLayout>
           </LinearLayout>
-
-          <LinearLayout
-              android:id="@+id/lr_row2"
+-->
+          <GridView
+              android:id="@+id/gv_gridview"
               android:layout_width="match_parent"
-              android:layout_height="46dp"
-              android:layout_below="@id/lr_row1"
-              android:layout_marginTop="10dp"
-              android:orientation="horizontal">
+              android:layout_height="102dp"
+              android:layout_below="@id/tv_category"
+              android:layout_marginTop="20dp"
+              android:numColumns="3"
+              android:gravity="center"
+              android:verticalSpacing="11dp"
+              tools:listitem="@layout/category_item"/>
 
-              <RelativeLayout
-                  android:id="@+id/bt_fish"
-                  android:layout_width="105dp"
-                  android:layout_height="46dp"
-                  android:layout_below="@id/tv_category"
-                  android:layout_marginLeft="25dp">
 
-                  <ImageView
-                      android:layout_width="105dp"
-                      android:layout_height="46dp"
-                      android:src="@drawable/rectangle" />
-
-                  <ImageView
-                      android:id="@+id/iv_fish"
-                      android:layout_width="20dp"
-                      android:layout_height="20dp"
-                      android:layout_marginLeft="18dp"
-                      android:layout_marginTop="12dp"
-                      android:layout_marginBottom="10dp"
-                      android:src="@drawable/fish" />
-
-                  <TextView
-                      android:layout_width="33dp"
-                      android:layout_height="24dp"
-                      android:layout_marginLeft="14dp"
-                      android:layout_marginTop="12dp"
-                      android:layout_marginBottom="10dp"
-                      android:layout_toRightOf="@id/iv_fish"
-                      android:fontFamily="@font/poppins_medium"
-                      android:text="Fish"
-                      android:textColor="#455A64"
-                      android:textSize="15sp" />
-              </RelativeLayout>
-
-              <RelativeLayout
-                  android:id="@+id/bt_other"
-                  android:layout_width="120dp"
-                  android:layout_height="46dp"
-                  android:layout_gravity="center"
-                  android:layout_marginLeft="6dp"
-                  android:layout_toRightOf="@id/bt_fish">
-
-                  <ImageView
-                      android:layout_width="wrap_content"
-                      android:layout_height="46dp"
-                      android:src="@drawable/rectangle" />
-
-                  <TextView
-                      android:layout_width="55dp"
-                      android:layout_height="24dp"
-                      android:layout_centerInParent="true"
-                      android:layout_marginTop="12dp"
-                      android:fontFamily="@font/poppins_medium"
-                      android:text="Other"
-                      android:textSize="16sp" />
-              </RelativeLayout>
-          </LinearLayout>
 
           <TextView
               android:id="@+id/tv_breed"
               android:layout_width="match_parent"
               android:layout_height="30dp"
-              android:layout_below="@id/lr_row2"
+              android:layout_below="@id/gv_gridview"
               android:layout_marginLeft="25dp"
               android:layout_marginTop="15dp"
-              android:text="Breed"
               android:fontFamily="@font/poppins_medium"
+              android:text="Breed"
               android:textColor="@color/black"
               android:textSize="20sp" />
+
           <com.google.android.material.textfield.TextInputLayout
+              android:id="@+id/et_breed"
+              style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/et_breed"
               android:layout_below="@id/tv_breed"
-              android:layout_marginHorizontal="25dp"
-             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+              android:layout_marginHorizontal="25dp">
 
               <AutoCompleteTextView
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:background="@color/white"
-                  android:hint="Breed of your pet"/>
+                  android:hint="Breed of your pet" />
           </com.google.android.material.textfield.TextInputLayout>
 
           <androidx.cardview.widget.CardView
-              android:layout_width="130dp"
               android:id="@+id/btn_next"
+              android:layout_width="130dp"
               android:layout_height="50dp"
               android:layout_below="@id/et_breed"
               android:layout_alignParentRight="true"
@@ -283,9 +232,9 @@
                   <TextView
                       android:layout_width="match_parent"
                       android:layout_height="30dp"
+                      android:fontFamily="@font/poppins_medium"
                       android:gravity="center"
                       android:text="Next"
-                      android:fontFamily="@font/poppins_medium"
                       android:textColor="#FFFFFF"
                       android:textSize="20sp" />
 
@@ -296,14 +245,6 @@
 
 
       </RelativeLayout>
-
-
-
-
-
-
-
-
 
           </RelativeLayout>
 </layout>
