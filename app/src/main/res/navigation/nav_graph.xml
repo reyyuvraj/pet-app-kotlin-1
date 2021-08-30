@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginFragment"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.dsckiet.petapp.view.loginFragment"
+        android:label="loginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_signup2Fragment"
+            app:destination="@id/signup2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup2Fragment"
+        android:name="com.dsckiet.petapp.view.Signup2Fragment"
+        android:label="Signup2Fragment" >
+        <action
+            android:id="@+id/action_signup2Fragment_to_signup3Fragment"
+            app:destination="@id/signup3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup3Fragment"
+        android:name="com.dsckiet.petapp.view.signUpPetCategoryFragment"
+        android:label="Signup3Fragment" >
+        <action
+            android:id="@+id/action_signup3Fragment_to_signUp4Fragment"
+            app:destination="@id/signUp4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp4Fragment"
+        android:name="com.dsckiet.petapp.view.signUpYourPetFragment"
+        android:label="signUp4Fragment" >
+        <action
+            android:id="@+id/action_signUp4Fragment_to_signUp5Fragment"
+            app:destination="@id/signUp5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp5Fragment"
+        android:name="com.dsckiet.petapp.view.signUpAddImageFragment"
+        android:label="signUp5Fragment" >
+        <action
+            android:id="@+id/action_signUp5Fragment_to_signUp6Fragment"
+            app:destination="@id/signUp6Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp6Fragment"
+        android:name="com.dsckiet.petapp.view.signUpUploadedFragment"
+        android:label="signUp6Fragment" >
+        <action
+            android:id="@+id/action_signUp6Fragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dsckiet.petapp.view.HomeFragment"
+        android:label="HomeFragment" />
+</navigation>
