@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="#72E2B3"
         android:id="@+id/RV_top"
-        tools:context=".HomeFragment">
+        tools:context=".view.HomeFragment">
 
         <RelativeLayout
 

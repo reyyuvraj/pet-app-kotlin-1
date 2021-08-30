@@ -11,7 +11,7 @@ import com.dsckiet.petapp.R
 import com.dsckiet.petapp.databinding.FragmentSignUp6Binding
 
 
-class signUp6Fragment : Fragment() {
+class signUpSixFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUp6Binding
     override fun onCreateView(

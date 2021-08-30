@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/signup3Fragment"
-        android:name="com.dsckiet.petapp.view.signUp3Fragment"
+        android:name="com.dsckiet.petapp.view.signUpThreeFragment"
         android:label="Signup3Fragment" >
         <action
             android:id="@+id/action_signup3Fragment_to_signUp4Fragment"
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUp4Fragment"
-        android:name="com.dsckiet.petapp.view.signUp4Fragment"
+        android:name="com.dsckiet.petapp.view.signUpFourFragment"
         android:label="signUp4Fragment" >
         <action
             android:id="@+id/action_signUp4Fragment_to_signUp5Fragment"
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUp5Fragment"
-        android:name="com.dsckiet.petapp.view.signUp5Fragment"
+        android:name="com.dsckiet.petapp.view.signUpFiveFragment"
         android:label="signUp5Fragment" >
         <action
             android:id="@+id/action_signUp5Fragment_to_signUp6Fragment"
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUp6Fragment"
-        android:name="com.dsckiet.petapp.view.signUp6Fragment"
+        android:name="com.dsckiet.petapp.view.signUpSixFragment"
         android:label="signUp6Fragment" >
         <action
             android:id="@+id/action_signUp6Fragment_to_homeFragment"
@@ -55,6 +55,6 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.dsckiet.petapp.HomeFragment"
+        android:name="com.dsckiet.petapp.view.HomeFragment"
         android:label="HomeFragment" />
 </navigation>
