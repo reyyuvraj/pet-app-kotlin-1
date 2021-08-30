@@ -12,7 +12,7 @@ import com.dsckiet.petapp.R
 
 import com.dsckiet.petapp.databinding.FragmentSignup3Binding
 
-class signUpThreeFragment : Fragment() {
+class signUpPetCategoryFragment : Fragment() {
 
 
 

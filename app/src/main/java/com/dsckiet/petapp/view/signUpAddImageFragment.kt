@@ -8,27 +8,25 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.dsckiet.petapp.R
-import com.dsckiet.petapp.databinding.FragmentSignUp6Binding
+import com.dsckiet.petapp.databinding.FragmentSignUp5Binding
 
 
-class signUpSixFragment : Fragment() {
+class signUpAddImageFragment : Fragment() {
 
-    private lateinit var binding: FragmentSignUp6Binding
+    private lateinit var binding: FragmentSignUp5Binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up6, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up5, container, false)
 
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.finishbtn.setOnClickListener {
-            findNavController().navigate(R.id.action_signUp6Fragment_to_homeFragment)
+        binding.btnNext.setOnClickListener {
+            findNavController().navigate(R.id.action_signUp5Fragment_to_signUp6Fragment)
         }
     }
 
