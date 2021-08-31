@@ -1,4 +1,4 @@
-package com.dsckiet.petapp.view
+package com.dsckiet.petapp.view.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,18 +8,19 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.dsckiet.petapp.R
-import com.dsckiet.petapp.databinding.FragmentSignUp6Binding
+import com.dsckiet.petapp.databinding.FragmentLoginBinding
 
+class LoginFragment : Fragment() {
 
-class signUpUploadedFragment : Fragment() {
+    private lateinit var auth: String
+    private lateinit var binding: FragmentLoginBinding
 
-    private lateinit var binding: FragmentSignUp6Binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up6, container, false)
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
 
         return binding.root
     }
@@ -27,9 +28,8 @@ class signUpUploadedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.finishbtn.setOnClickListener {
-            findNavController().navigate(R.id.action_signUp6Fragment_to_homeFragment)
+        binding.loginbtn.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_signup2Fragment)
         }
     }
-
 }

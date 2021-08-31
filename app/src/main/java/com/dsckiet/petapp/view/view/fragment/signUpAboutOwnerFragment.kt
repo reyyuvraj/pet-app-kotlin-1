@@ -1,4 +1,4 @@
-package com.dsckiet.petapp.view
+package com.dsckiet.petapp.view.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.dsckiet.petapp.R
 import com.dsckiet.petapp.databinding.FragmentSignup2Binding
 
-class Signup2Fragment : Fragment() {
+class SignUpAboutOwnerFragment : Fragment() {
     private lateinit var binding: FragmentSignup2Binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +29,4 @@ class Signup2Fragment : Fragment() {
             findNavController().navigate(R.id.action_signup2Fragment_to_signup3Fragment)
         }
     }
-
-
 }
