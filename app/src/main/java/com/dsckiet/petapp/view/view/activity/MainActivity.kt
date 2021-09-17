@@ -1,4 +1,4 @@
-package com.dsckiet.petapp.view
+package com.dsckiet.petapp.view.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

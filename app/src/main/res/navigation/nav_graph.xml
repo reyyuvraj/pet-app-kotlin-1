@@ -7,15 +7,16 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.dsckiet.petapp.view.loginFragment"
-        android:label="loginFragment" >
+        android:name="com.dsckiet.petapp.view.view.fragment.LoginFragment"
+        android:label="loginFragment"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signup2Fragment"
             app:destination="@id/signup2Fragment" />
     </fragment>
     <fragment
         android:id="@+id/signup2Fragment"
-        android:name="com.dsckiet.petapp.view.Signup2Fragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.SignUpAboutOwnerFragment"
         android:label="Signup2Fragment" >
         <action
             android:id="@+id/action_signup2Fragment_to_signup3Fragment"
@@ -23,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/signup3Fragment"
-        android:name="com.dsckiet.petapp.view.signUpPetCategoryFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.signUpPetCategoryFragment"
         android:label="Signup3Fragment" >
         <action
             android:id="@+id/action_signup3Fragment_to_signUp4Fragment"
@@ -31,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUp4Fragment"
-        android:name="com.dsckiet.petapp.view.signUpYourPetFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.signUpYourPetFragment"
         android:label="signUp4Fragment" >
         <action
             android:id="@+id/action_signUp4Fragment_to_signUp5Fragment"
@@ -39,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUp5Fragment"
-        android:name="com.dsckiet.petapp.view.signUpAddImageFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.signUpAddImageFragment"
         android:label="signUp5Fragment" >
         <action
             android:id="@+id/action_signUp5Fragment_to_signUp6Fragment"
@@ -47,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUp6Fragment"
-        android:name="com.dsckiet.petapp.view.signUpUploadedFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.signUpUploadedFragment"
         android:label="signUp6Fragment" >
         <action
             android:id="@+id/action_signUp6Fragment_to_homeFragment"
@@ -55,6 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.dsckiet.petapp.view.HomeFragment"
-        android:label="HomeFragment" />
+        android:name="com.dsckiet.petapp.view.view.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
 </navigation>
