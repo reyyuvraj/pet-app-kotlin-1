@@ -24,6 +24,7 @@
             android:src="@drawable/green_dog" />
 
         <TextView
+            android:id="@+id/tv_pet_type"
             android:layout_width="33dp"
             android:layout_height="24dp"
             android:layout_marginLeft="12dp"

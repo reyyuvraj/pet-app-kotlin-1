@@ -44,6 +44,13 @@
         <entry key="..\:/Users/reyyu/StudioProjects/pet-app-kotlin/app/src/main/res/layout/pet_item.xml" value="0.1" />
         <entry key="..\:/Users/reyyu/StudioProjects/pet-app-kotlin/app/src/main/res/layout/side_nav.xml" value="0.165" />
         <entry key="..\:/Users/reyyu/StudioProjects/pet-app-kotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18611111111111112" />
+        <entry key="..\:/pet-app-kotlin-1/app/src/main/res/drawable/bottom_nav_color_selector.xml" value="0.2312820512820513" />
+        <entry key="..\:/pet-app-kotlin-1/app/src/main/res/drawable/corner_radius.xml" value="0.2312820512820513" />
+        <entry key="..\:/pet-app-kotlin-1/app/src/main/res/layout/activity_main.xml" value="0.16847826086956522" />
+        <entry key="..\:/pet-app-kotlin-1/app/src/main/res/layout/fragment_home.xml" value="0.1793478260869565" />
+        <entry key="..\:/pet-app-kotlin-1/app/src/main/res/layout/home_category_item.xml" value="0.16847826086956522" />
+        <entry key="..\:/pet-app-kotlin-1/app/src/main/res/layout/pet_item.xml" value="0.16847826086956522" />
+        <entry key="..\:/pet-app-kotlin-1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21875" />
       </map>
     </option>
   </component>
