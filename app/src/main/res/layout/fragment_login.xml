@@ -57,6 +57,7 @@
                 android:padding="0dp">
 
                 <EditText
+                    android:id="@+id/ett_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -88,6 +89,7 @@
                 app:passwordToggleEnabled="true">
 
                 <EditText
+                    android:id="@+id/ett_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
