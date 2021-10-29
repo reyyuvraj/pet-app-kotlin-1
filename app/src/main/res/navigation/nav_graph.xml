@@ -58,5 +58,21 @@
         android:id="@+id/homeFragment"
         android:name="com.dsckiet.petapp.view.view.fragment.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_userprofileFragment"
+            app:destination="@id/userprofileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentsidenav"
+            app:destination="@id/fragmentsidenav" />
+    </fragment>
+    <fragment
+        android:id="@+id/userprofileFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.userprofileFragment"
+        android:label="fragment_userprofile"
+        tools:layout="@layout/fragment_userprofile" />
+    <fragment
+        android:id="@+id/fragmentsidenav"
+        android:name="com.dsckiet.petapp.view.view.fragment.Fragmentsidenav"
+        android:label="Fragmentsidenav" />
 </navigation>

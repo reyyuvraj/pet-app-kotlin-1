@@ -1,229 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/side_nav">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
-        android:id="@+id/sideUserInfo"
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginHorizontal="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/side_nav">
 
-        <ImageView
-            android:id="@+id/userPfp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:background="@drawable/side_nav_pfp"
-            android:src="@drawable/profile" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/sideUserInfo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@id/userPfp"
-            android:text="@string/sample"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:layout_marginTop="60dp"
+            android:layout_marginHorizontal="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_close" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/userPfp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cardCornerRadius="100dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/profile" />
+            </androidx.cardview.widget.CardView>
 
-    </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@id/userPfp"
+                android:text="@string/Sample"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_close" />
+
+        </RelativeLayout>
 
 
-    <RelativeLayout
-        android:id="@+id/sideNavAdoption"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sideUserInfo">
-
-        <ImageView
-            android:id="@+id/sideAdoption"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/ic_adoption" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/sideNavAdoption"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/sideAdoption"
-            android:text="@string/adoption"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sideUserInfo">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/sideAdoption"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_adoption" />
 
-    <RelativeLayout
-        android:id="@+id/sideNavCare"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sideNavAdoption">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/sideAdoption"
+                android:text="@string/adoption"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/sideCare"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/ic_caretaking" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/sideNavCare"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/sideCare"
-            android:text="@string/caretaking"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sideNavAdoption">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/sideCare"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_caretaking" />
 
-    <RelativeLayout
-        android:id="@+id/sideNavConnection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sideNavCare">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/sideCare"
+                android:text="@string/caretaking"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/sideConnection"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/ic_connection" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/sideNavConnection"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/sideConnection"
-            android:text="@string/connection"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sideNavCare">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/sideConnection"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_connection" />
 
-    <RelativeLayout
-        android:id="@+id/sideNavEvent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sideNavConnection">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/sideConnection"
+                android:text="@string/connection"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/sideEvent"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/ic_event" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/sideNavEvent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/sideEvent"
-            android:text="@string/event"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sideNavConnection">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/sideEvent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_event" />
 
-    <RelativeLayout
-        android:id="@+id/sideNavMap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sideNavEvent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/sideEvent"
+                android:text="@string/event"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/sideMap"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/ic_viewmap" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/sideNavMap"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/sideMap"
-            android:text="@string/map"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sideNavEvent">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/sideMap"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_viewmap" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sideNavMap">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/sideMap"
+                android:text="@string/map"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/sideSetting"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_settings" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@id/sideSetting"
-            android:text="@string/settings"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="190dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sideNavMap">
 
-        <TextView
-            android:id="@+id/sideOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="@string/out"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            <ImageView
+                android:id="@+id/sideSetting"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_settings" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginRight="10dp"
-            android:layout_toStartOf="@id/sideOut"
-            android:src="@drawable/ic_logout" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@id/sideSetting"
+                android:text="@string/settings"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/sideOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/out"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_toStartOf="@id/sideOut"
+                android:src="@drawable/ic_logout" />
+
+        </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
