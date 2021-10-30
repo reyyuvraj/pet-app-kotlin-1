@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.dsckiet.petapp.R
 
-class userprofileFragment : Fragment() {
+class UserprofileFragment : Fragment() {
 
 
 

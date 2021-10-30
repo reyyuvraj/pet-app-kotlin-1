@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.dsckiet.petapp.R
 import com.dsckiet.petapp.databinding.FragmentSignup2Binding
+import com.dsckiet.petapp.view.model.PostOwnerData
 import kotlinx.android.synthetic.main.fragment_signup2.*
 
 class SignUpAboutOwnerFragment : Fragment() {
@@ -27,25 +28,41 @@ class SignUpAboutOwnerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.action_signup2Fragment_to_signup3Fragment)
+            findNavController().navigate(
+                SignUpAboutOwnerFragmentDirections.actionSignup2FragmentToSignup3Fragment(
+                    userSignUp()
+                )
+            )
         }
     }
 
-    private fun userSignUp(){
-        val name = binding.etYourName
-        val username = binding.etUsername
-        val email= binding.etEmail
-        val password = binding.etPassword
-        val cPassword = binding.etCnfpassword
+    private fun userSignUp(): PostOwnerData {
+        val name = binding.etYourName.text.toString()
+        val username = binding.etUsername.text.toString()
+        val email = binding.etEmail.text.toString()
+        val password = binding.etPassword.text.toString()
+        val cPassword = binding.etCnfpassword.text.toString()
 
-        if(password.length() < 6){
+        if (binding.etPassword.length() < 6) {
             binding.etPassword.error = "Password should be at least 6 characters long."
             binding.etPassword.requestFocus()
         }
 
-        if(cPassword != password){
+        if (cPassword != password) {
             binding.etCnfpassword.error = "Passwords do not match."
             binding.etCnfpassword.requestFocus()
         }
+
+        return PostOwnerData(
+            breed = "",
+            category = "",
+            description = "",
+            email = email,
+            gender = "",
+            name = name,
+            password = password,
+            petName = "",
+            username = username
+        )
     }
 }

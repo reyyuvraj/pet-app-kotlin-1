@@ -1,25 +1,40 @@
 package com.dsckiet.petapp.view.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.dsckiet.petapp.R
 import com.dsckiet.petapp.databinding.FragmentSignUp6Binding
+import com.dsckiet.petapp.view.model.PostOwnerData
+import com.dsckiet.petapp.view.model.PostRegister
+import com.dsckiet.petapp.view.viewmodel.ViewModel
 
 
 class SignUpUploadedFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUp6Binding
+    private val args: SignUpUploadedFragmentArgs by navArgs()
+    private lateinit var register: PostRegister
+    private lateinit var viewModel: ViewModel
+    private val TAG = "uploaded"
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up6, container, false)
+        args.postOwnerData
+
+        Log.d(TAG, "onCreateView: ${args.postOwnerData}")
 
         return binding.root
     }
@@ -27,9 +42,58 @@ class SignUpUploadedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel = ViewModelProvider(this).get(ViewModel::class.java)
+
         binding.finishbtn.setOnClickListener {
-            findNavController().navigate(R.id.action_signUp6Fragment_to_homeFragment)
+
+            val data = args.postOwnerData
+
+            viewModel.postRegister(
+                PostOwnerData(
+                    breed = data.breed,
+                    category = data.category,
+                    description = data.description,
+                    email = data.email,
+                    gender = "female",
+                    name = data.name,
+                    password = data.password,
+                    petName = data.petName,
+                    username = data.username
+                )
+            )
+
+
+            Log.d(TAG, "onViewCreated: ${petDetails()}")
+
+            viewModel.registerData.observe(viewLifecycleOwner, {
+                Log.d(TAG, "onViewCreated: $it")
+                Log.d(TAG, "onViewCreated: Observing")
+                if (it.isSuccessful) {
+                    Toast.makeText(context, "Registration successful", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_signUp6Fragment_to_homeFragment)
+                } else {
+                    val error = it.errorBody()
+                    Log.d(TAG, "onViewCreated: ${error.toString()}")
+                }
+            })
+
         }
+    }
+
+    private fun petDetails(): PostOwnerData {
+        val data = args.postOwnerData
+
+        return PostOwnerData(
+            breed = data.breed,
+            category = data.category,
+            description = data.description,
+            email = data.email,
+            gender = data.gender,
+            name = data.name,
+            password = data.password,
+            petName = data.petName,
+            username = data.username
+        )
     }
 
 }
