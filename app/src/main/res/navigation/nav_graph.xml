@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_signup3Fragment_to_signUp4Fragment"
             app:destination="@id/signUp4Fragment" />
+        <argument
+            android:name="postOwnerData"
+            app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
     </fragment>
     <fragment
         android:id="@+id/signUp4Fragment"
@@ -40,6 +43,9 @@
         <action
             android:id="@+id/action_signUp4Fragment_to_signUp5Fragment"
             app:destination="@id/signUp5Fragment" />
+        <argument
+            android:name="postOwnerData"
+            app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
     </fragment>
     <fragment
         android:id="@+id/signUp5Fragment"
@@ -48,6 +54,9 @@
         <action
             android:id="@+id/action_signUp5Fragment_to_signUp6Fragment"
             app:destination="@id/signUp6Fragment" />
+        <argument
+            android:name="postOwnerData"
+            app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
     </fragment>
     <fragment
         android:id="@+id/signUp6Fragment"
@@ -56,6 +65,8 @@
         <action
             android:id="@+id/action_signUp6Fragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument android:name="postOwnerData"
+            app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -71,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/userprofileFragment"
-        android:name="com.dsckiet.petapp.view.view.fragment.userprofileFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.UserprofileFragment"
         android:label="fragment_userprofile"
         tools:layout="@layout/fragment_userprofile" />
     <fragment
