@@ -1,5 +1,10 @@
 package com.dsckiet.petapp.view.call
 
+import com.dsckiet.petapp.view.model.LoginResponse
+import com.dsckiet.petapp.view.model.PostLogin
+import com.dsckiet.petapp.view.model.PostOwnerData
+import com.dsckiet.petapp.view.model.RegisterResponse
+import retrofit2.Call
 import retrofit2.http.*
 
 interface PetAPI {
@@ -9,15 +14,18 @@ interface PetAPI {
         const val sampleToken = "gbff0078ajg4vt10oc6s56fp2rprdpze"
     }
 
-    @POST("/login/register")
+    @POST("/login/register/")
     fun postRegister(
-    )
+        @Body registerBody: PostOwnerData
+    ): Call<RegisterResponse>
 
-    @POST("/login/login")
+    @POST("/login/login/")
     fun postLogin(
-    )
+        @Header("Authorization") auth: String = "Basic",
+        @Body loginBody: PostLogin
+    ): Call<LoginResponse>
 
-    @GET("/login/logout")
+    @GET("/login/logout/")
     fun getLogout(
         @Header("token")
         token: String = "ok"
