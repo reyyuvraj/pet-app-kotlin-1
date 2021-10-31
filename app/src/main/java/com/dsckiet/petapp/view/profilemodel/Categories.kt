@@ -1,6 +1,6 @@
 package com.dsckiet.petapp.view.profilemodel
 
-data class categories(
+data class Categories(
     var dp:String="",
     var pet:String=""
 )

@@ -1,13 +1,13 @@
 package com.dsckiet.petapp.view.data
 
-import com.dsckiet.petapp.view.profilemodel.profile
+import com.dsckiet.petapp.view.profilemodel.Profile
 
-class petprofiledatasource {
+class PetProfileDataSource {
 companion object {
-    fun createDataSet(): ArrayList<profile>{
-        val list = ArrayList<profile>()
+    fun createDataSet(): ArrayList<Profile>{
+        val list = ArrayList<Profile>()
         list.add(
-            profile(
+            Profile(
                 dp ="https://i.pinimg.com/564x/05/67/3a/05673a4496d28ccb5ffea8c4cc81e8c1.jpg",
                 ownername = "Suresh",
                 breed = "Labrador",
@@ -17,7 +17,7 @@ companion object {
         )
 
         list.add(
-            profile(
+            Profile(
                 dp ="https://i.pinimg.com/564x/05/67/3a/05673a4496d28ccb5ffea8c4cc81e8c1.jpg",
                 ownername = "Ramesh",
                 breed = "Labrador",
@@ -27,7 +27,7 @@ companion object {
         )
 
         list.add(
-            profile(
+            Profile(
                 dp ="https://i.pinimg.com/564x/05/67/3a/05673a4496d28ccb5ffea8c4cc81e8c1.jpg",
                 ownername = "Suresh",
                 breed = "Labrador",
@@ -37,7 +37,7 @@ companion object {
         )
 
         list.add(
-            profile(
+            Profile(
                 dp ="https://i.pinimg.com/564x/05/67/3a/05673a4496d28ccb5ffea8c4cc81e8c1.jpg",
                 ownername = "Ramesh",
                 breed = "Labrador",
@@ -47,7 +47,7 @@ companion object {
         )
 
         list.add(
-            profile(
+            Profile(
                 dp ="https://i.pinimg.com/564x/05/67/3a/05673a4496d28ccb5ffea8c4cc81e8c1.jpg",
                 ownername = "Suresh",
                 breed = "Labrador",

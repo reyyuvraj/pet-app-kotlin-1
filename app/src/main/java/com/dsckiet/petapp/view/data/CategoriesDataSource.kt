@@ -1,35 +1,35 @@
 package com.dsckiet.petapp.view.data
 
-import com.dsckiet.petapp.view.profilemodel.categories
+import com.dsckiet.petapp.view.profilemodel.Categories
 
 
-class categoriesdataSource {
+class CategoriesDataSource {
     companion object{
-        fun createDataSet(): ArrayList<categories>{
-            val list = ArrayList<categories>()
+        fun createDataSet(): ArrayList<Categories>{
+            val list = ArrayList<Categories>()
             list.add(
-                categories(
+                Categories(
                     dp = "https://cdn.icon-icons.com/icons2/2070/PNG/512/dog_icon_125586.png",
                     pet = "Dog"
                 )
             )
 
             list.add(
-                categories(
+                Categories(
                     dp = "https://cdn.icon-icons.com/icons2/2070/PNG/512/dog_icon_125586.png",
                     pet = "Cat"
                 )
             )
 
             list.add(
-                categories(
+                Categories(
                     dp = "https://cdn.icon-icons.com/icons2/2070/PNG/512/dog_icon_125586.png",
                     pet = "fish"
                 )
             )
 
             list.add(
-                categories(
+                Categories(
                     dp = "https://cdn.icon-icons.com/icons2/2070/PNG/512/dog_icon_125586.png",
                     pet = "Bird"
                 )

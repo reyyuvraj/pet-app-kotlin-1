@@ -7,22 +7,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dsckiet.petapp.R
-import com.dsckiet.petapp.view.profilemodel.categories
-import com.dsckiet.petapp.view.profilemodel.profile
+import com.dsckiet.petapp.view.profilemodel.Categories
 import kotlinx.android.synthetic.main.home_category_item.view.*
 
-class categoriesRecyclerAdapter(private val context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var bar: List<categories> = ArrayList()
+class CategoriesRecyclerAdapter(private val context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var bar: List<Categories> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        return categoriesRecyclerAdapter.categoriesViewHolder(
+        return CategoriesRecyclerAdapter.categoriesViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.home_category_item, parent, false), context)//messages is xml file
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is categoriesRecyclerAdapter.categoriesViewHolder -> {
+            is CategoriesRecyclerAdapter.categoriesViewHolder -> {
                 holder.bind(bar.get(position))
             }
         }
@@ -32,7 +31,7 @@ class categoriesRecyclerAdapter(private val context: Context): RecyclerView.Adap
         return bar.size
     }
 
-    fun submitcateg(blogList: List<categories>) {
+    fun submitcateg(blogList: List<Categories>) {
         bar = blogList
     }
 
@@ -40,7 +39,7 @@ class categoriesRecyclerAdapter(private val context: Context): RecyclerView.Adap
         val petprofile=itemView.iv_cat
         val pettype=itemView.tv_pet_type
 
-        fun bind(cate:categories){
+        fun bind(cate:Categories){
             pettype.setText(cate.pet)
 
             Glide.with(context)

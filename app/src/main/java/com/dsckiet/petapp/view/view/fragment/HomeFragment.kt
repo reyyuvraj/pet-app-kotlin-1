@@ -11,14 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dsckiet.petapp.R
 import com.dsckiet.petapp.databinding.FragmentHomeBinding
-import com.dsckiet.petapp.view.adapter.categoriesRecyclerAdapter
-import com.dsckiet.petapp.view.adapter.profileRecyclerAdapter
-import com.dsckiet.petapp.view.data.categoriesdataSource
-import com.dsckiet.petapp.view.data.petprofiledatasource
+import com.dsckiet.petapp.view.adapter.CategoriesRecyclerAdapter
+import com.dsckiet.petapp.view.adapter.ProfileRecyclerAdapter
+import com.dsckiet.petapp.view.data.CategoriesDataSource
+import com.dsckiet.petapp.view.data.PetProfileDataSource
 
 class HomeFragment : Fragment() {
-    private lateinit var profileAdapter: profileRecyclerAdapter
-    private lateinit var categoryAdapter: categoriesRecyclerAdapter
+
+    private lateinit var profileAdapter: ProfileRecyclerAdapter
+    private lateinit var categoryAdapter: CategoriesRecyclerAdapter
     private lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,10 +27,6 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-
-
-
-
 
         return binding.root
     }
@@ -43,19 +40,19 @@ class HomeFragment : Fragment() {
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            profileAdapter= profileRecyclerAdapter(requireContext())
+            profileAdapter= ProfileRecyclerAdapter(requireContext())
             adapter=profileAdapter
         }
-        val data2 = petprofiledatasource.createDataSet()
+        val data2 = PetProfileDataSource.createDataSet()
         profileAdapter.submitList(data2)
 
         topRecycler.apply {
             layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-            categoryAdapter= categoriesRecyclerAdapter(requireContext())
+            categoryAdapter= CategoriesRecyclerAdapter(requireContext())
             adapter=categoryAdapter
 
         }
-        val data3 =categoriesdataSource.createDataSet()
+        val data3 =CategoriesDataSource.createDataSet()
         categoryAdapter.submitcateg(data3)
 
 
@@ -67,9 +64,5 @@ class HomeFragment : Fragment() {
         binding.ivMenu.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_fragmentsidenav)
         }
-
-
     }
-
-
 }

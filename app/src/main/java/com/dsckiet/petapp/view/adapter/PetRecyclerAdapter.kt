@@ -7,13 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dsckiet.petapp.R
 
-import com.dsckiet.petapp.view.profilemodel.pet
+import com.dsckiet.petapp.view.profilemodel.Pet
 import kotlinx.android.synthetic.main.category_item.view.*
-import kotlinx.android.synthetic.main.home_category_item.view.*
 import android.content.Context as Context
 
-class petRecyclerAdapter(val context: Context, private var petpost: List<pet>) :
-    RecyclerView.Adapter<petRecyclerAdapter.ViewHolder>() {
+class PetRecyclerAdapter(val context: Context, private var petpost: List<Pet>) :
+    RecyclerView.Adapter<PetRecyclerAdapter.ViewHolder>() {
 
     lateinit var inflater: LayoutInflater
 
@@ -22,7 +21,7 @@ class petRecyclerAdapter(val context: Context, private var petpost: List<pet>) :
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): petRecyclerAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PetRecyclerAdapter.ViewHolder {
 
 
 
@@ -35,7 +34,7 @@ class petRecyclerAdapter(val context: Context, private var petpost: List<pet>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         when (holder) {
-            is petRecyclerAdapter.ViewHolder -> {
+            is PetRecyclerAdapter.ViewHolder -> {
                 holder.bind(petpost.get(position))
             }
         }
@@ -49,7 +48,7 @@ class petRecyclerAdapter(val context: Context, private var petpost: List<pet>) :
         val petdp=itemView.iv_dog
         val petbreed=itemView.tv_name
 
-        fun bind(pe: pet){
+        fun bind(pe: Pet){
             petbreed.setText(pe.breed)
 
        Glide.with(context)
