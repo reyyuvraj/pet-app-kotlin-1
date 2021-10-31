@@ -1,6 +1,6 @@
 package com.dsckiet.petapp.view.profilemodel
 
-data class pet(
+data class Pet(
     var dp:String="",
     var breed:String=""
 )

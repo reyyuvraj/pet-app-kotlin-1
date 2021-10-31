@@ -2,7 +2,7 @@ package com.dsckiet.petapp.view.profilemodel
 
 import android.media.Image
 
-data class profile(
+data class Profile(
     var dp:String=" ",
     var ownername:String=" ",
     var breed:String=" ",

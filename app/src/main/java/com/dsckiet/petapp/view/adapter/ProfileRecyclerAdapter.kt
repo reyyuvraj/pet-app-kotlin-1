@@ -7,22 +7,22 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dsckiet.petapp.R
-import com.dsckiet.petapp.view.profilemodel.profile
+import com.dsckiet.petapp.view.profilemodel.Profile
 import kotlinx.android.synthetic.main.pet_item.view.*
 
-class profileRecyclerAdapter(private val context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var posts: List<profile> = ArrayList()
+class ProfileRecyclerAdapter(private val context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var posts: List<Profile> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
 
-        return profileRecyclerAdapter.profileViewHolder(
+        return ProfileRecyclerAdapter.profileViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.pet_item, parent, false), context)//messages is xml file
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is profileRecyclerAdapter.profileViewHolder -> {
+            is ProfileRecyclerAdapter.profileViewHolder -> {
                 holder.bind(posts.get(position))
             }
         }
@@ -31,7 +31,7 @@ class profileRecyclerAdapter(private val context: Context): RecyclerView.Adapter
     override fun getItemCount(): Int {
        return posts.size
     }
-    fun submitList(blogList: List<profile>) {
+    fun submitList(blogList: List<Profile>) {
         posts = blogList
     }
     class profileViewHolder(itemView: View, val context: Context) : RecyclerView.ViewHolder(itemView){
@@ -41,7 +41,7 @@ class profileRecyclerAdapter(private val context: Context): RecyclerView.Adapter
         val breed=itemView.tv_breed
         val distance=itemView.tv_dis
 
-        fun bind(prof:profile){
+        fun bind(prof:Profile){
             ownernam.setText(prof.ownername)
             age.setText(prof.petage)
             breed.setText(prof.breed)

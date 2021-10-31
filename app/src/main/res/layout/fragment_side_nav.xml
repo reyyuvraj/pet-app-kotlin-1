@@ -45,9 +45,9 @@
                 android:textSize="28sp" />
 
             <ImageView
+                android:id="@+id/closeSideNav"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/ic_close" />

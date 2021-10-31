@@ -2,8 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/loginFragment"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -12,26 +12,44 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signup2Fragment"
-            app:destination="@id/signup2Fragment" />
+            app:destination="@id/signup2Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/signup2Fragment"
         android:name="com.dsckiet.petapp.view.view.fragment.SignUpAboutOwnerFragment"
-        android:label="Signup2Fragment" >
+        android:label="Signup2Fragment"
+        tools:layout="@layout/fragment_signup2">
         <action
             android:id="@+id/action_signup2Fragment_to_signup3Fragment"
-            app:destination="@id/signup3Fragment" />
+            app:destination="@id/signup3Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/signup3Fragment"
         android:name="com.dsckiet.petapp.view.view.fragment.SignUpPetCategoryFragment"
-        android:label="Signup3Fragment" >
+        android:label="Signup3Fragment"
+        tools:layout="@layout/fragment_signup3">
         <action
             android:id="@+id/action_signup3Fragment_to_signUp4Fragment"
-            app:destination="@id/signUp4Fragment" />
+            app:destination="@id/signUp4Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <argument
             android:name="postOwnerData"
             app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
@@ -39,10 +57,15 @@
     <fragment
         android:id="@+id/signUp4Fragment"
         android:name="com.dsckiet.petapp.view.view.fragment.SignUpYourPetFragment"
-        android:label="signUp4Fragment" >
+        android:label="signUp4Fragment"
+        tools:layout="@layout/fragment_sign_up4">
         <action
             android:id="@+id/action_signUp4Fragment_to_signUp5Fragment"
-            app:destination="@id/signUp5Fragment" />
+            app:destination="@id/signUp5Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <argument
             android:name="postOwnerData"
             app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
@@ -50,10 +73,15 @@
     <fragment
         android:id="@+id/signUp5Fragment"
         android:name="com.dsckiet.petapp.view.view.fragment.SignUpAddImageFragment"
-        android:label="signUp5Fragment" >
+        android:label="signUp5Fragment"
+        tools:layout="@layout/fragment_sign_up5">
         <action
             android:id="@+id/action_signUp5Fragment_to_signUp6Fragment"
-            app:destination="@id/signUp6Fragment" />
+            app:destination="@id/signUp6Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <argument
             android:name="postOwnerData"
             app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
@@ -61,11 +89,17 @@
     <fragment
         android:id="@+id/signUp6Fragment"
         android:name="com.dsckiet.petapp.view.view.fragment.SignUpUploadedFragment"
-        android:label="signUp6Fragment" >
+        android:label="signUp6Fragment"
+        tools:layout="@layout/fragment_sign_up6">
         <action
             android:id="@+id/action_signUp6Fragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <argument android:name="postOwnerData"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="postOwnerData"
             app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
     </fragment>
     <fragment
@@ -75,10 +109,18 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_userprofileFragment"
-            app:destination="@id/userprofileFragment" />
+            app:destination="@id/userprofileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_homeFragment_to_fragmentsidenav"
-            app:destination="@id/fragmentsidenav" />
+            app:destination="@id/fragmentsidenav"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/userprofileFragment"
@@ -87,6 +129,15 @@
         tools:layout="@layout/fragment_userprofile" />
     <fragment
         android:id="@+id/fragmentsidenav"
-        android:name="com.dsckiet.petapp.view.view.fragment.Fragmentsidenav"
-        android:label="Fragmentsidenav" />
+        android:name="com.dsckiet.petapp.view.view.fragment.FragmentSideNavigation"
+        android:label="Fragmentsidenav"
+        tools:layout="@layout/fragment_side_nav">
+        <action
+            android:id="@+id/action_fragmentsidenav_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 </navigation>

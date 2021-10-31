@@ -2,12 +2,14 @@ package com.dsckiet.petapp.view.view.fragment
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.dsckiet.petapp.R
@@ -57,13 +59,17 @@ class LoginFragment : Fragment() {
                 binding.etPassword.error = "Password incorrect."
                 binding.etPassword.requestFocus()
             } else {
+                binding.loginBtnText.visibility = TextView.GONE
+                binding.loginProgressBar.visibility = ProgressBar.VISIBLE
                 viewModel.postLogin(password, email)
-                viewModel.loginData.observe(viewLifecycleOwner,  {
+                viewModel.loginData.observe(viewLifecycleOwner, {
                     if (it.isSuccessful && it.code() == 200) {
                         findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                     } else {
                         val errorBody = it.errorBody()
                         Log.d("LoginFragment", "onViewCreated: ${errorBody.toString()}")
+                        binding.loginBtnText.visibility = TextView.VISIBLE
+                        binding.loginProgressBar.visibility = ProgressBar.GONE
                     }
                 })
 
