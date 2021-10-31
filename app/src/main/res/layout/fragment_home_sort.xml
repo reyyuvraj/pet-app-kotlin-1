@@ -125,7 +125,7 @@
                 android:background="@drawable/ic_outline_button"
                 android:text="@string/reset"
                 android:textAllCaps="false"
-                android:textColor="@color/side_nav"
+                android:textColor="@color/bluish_gray"
                 android:textSize="32sp" />
 
             <androidx.appcompat.widget.AppCompatButton
