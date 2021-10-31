@@ -5,22 +5,19 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.dsckiet.petapp.view.call.RetrofitInstance
-import com.dsckiet.petapp.view.model.LoginResponse
-import com.dsckiet.petapp.view.model.PostLogin
-import com.dsckiet.petapp.view.model.PostOwnerData
-import com.dsckiet.petapp.view.model.RegisterResponse
+import com.dsckiet.petapp.view.model.*
 import com.dsckiet.petapp.view.util.LocalKeyStorage
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
-private const val TAG = "Repository"
 
 class Repository constructor(val application: Application) {
 
     val localKeyStorage: LocalKeyStorage = LocalKeyStorage(application)
     val registerData = MutableLiveData<Response<RegisterResponse>>()
     val loginData = MutableLiveData<Response<LoginResponse>>()
+    val chatData = MutableLiveData<ChatsItem>()
+    val TAG = "Repository"
 
     fun postRegister(postRegister: PostOwnerData) {
 
@@ -76,6 +73,8 @@ class Repository constructor(val application: Application) {
                 }
             }
         })
+    }
 
+    fun getChatList(){
     }
 }
