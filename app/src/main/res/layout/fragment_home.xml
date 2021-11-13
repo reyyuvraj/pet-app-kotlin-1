@@ -26,16 +26,17 @@
                 android:id="@+id/iv_menu"
                 android:layout_width="30dp"
                 android:layout_height="25dp"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/menu" />
+                android:layout_marginStart="30dp"
+                android:src="@drawable/menu"
+                android:contentDescription="@string/description" />
 
             <TextView
                 android:id="@+id/TV_locate"
                 android:layout_width="67dp"
                 android:layout_height="24dp"
-                android:layout_marginLeft="185dp"
+                android:layout_marginStart="185dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="lucknow"
+                android:text="@string/lucknow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
 
@@ -45,15 +46,17 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="159dp"
                 android:layout_marginEnd="6dp"
-                android:src="@drawable/location" />
+                android:src="@drawable/location"
+                android:contentDescription="@string/description" />
 
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="30dp"
-                android:src="@drawable/search" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/search"
+                android:contentDescription="@string/description" />
 
         </RelativeLayout>
 
@@ -72,7 +75,7 @@
                 android:layout_marginStart="30dp"
                 android:height="27dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Pet Categories"
+                android:text="@string/pet_categories"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -105,7 +108,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="sort by"
+                android:text="@string/sort_by"
                 android:textColor="#455A64" />
 
 

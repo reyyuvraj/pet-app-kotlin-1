@@ -11,7 +11,8 @@
         android:id="@+id/iv_box"
         android:layout_width="105dp"
         android:layout_height="46dp"
-        android:src="@drawable/rectangle" />
+        android:src="@drawable/rectangle"
+        android:contentDescription="@string/description" />
 
     <ImageView
         android:id="@+id/iv_dog"
@@ -20,7 +21,8 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/dog" />
+        android:src="@drawable/dog"
+        android:contentDescription="@string/description" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -31,7 +33,7 @@
         android:layout_marginBottom="10dp"
         android:layout_toEndOf="@id/iv_dog"
         android:fontFamily="@font/poppins_medium"
-        android:text="Dog"
+        android:text="@string/dog"
         android:textColor="#455A64"
         android:textSize="15sp" />
 </RelativeLayout>

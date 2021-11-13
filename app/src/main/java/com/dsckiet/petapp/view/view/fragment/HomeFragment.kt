@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dsckiet.petapp.R
@@ -15,18 +17,25 @@ import com.dsckiet.petapp.view.adapter.CategoriesRecyclerAdapter
 import com.dsckiet.petapp.view.adapter.ProfileRecyclerAdapter
 import com.dsckiet.petapp.view.data.CategoriesDataSource
 import com.dsckiet.petapp.view.data.PetProfileDataSource
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
     private lateinit var profileAdapter: ProfileRecyclerAdapter
     private lateinit var categoryAdapter: CategoriesRecyclerAdapter
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var navController: NavController
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+
+        navController = findNavController()
+
+        binding.bottomNav.setupWithNavController(navController)
 
         return binding.root
     }
@@ -64,5 +73,9 @@ class HomeFragment : Fragment() {
         binding.ivMenu.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_fragmentsidenav)
         }
+    }
+
+    fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp()
     }
 }

@@ -2,8 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".view.view.fragment.ForumFragment">
 
 
@@ -31,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:contentDescription="@string/description"
                 android:src="@drawable/menu" />
 
             <TextView
@@ -43,7 +42,8 @@
                 android:fontFamily="@font/poppins"
                 android:text="@string/myConnections"
                 android:textColor="@color/white"
-                android:textSize="@dimen/dimen_text_24" />
+                android:textSize="@dimen/dimen_text_24"
+                tools:ignore="RelativeOverlap" />
 
             <ImageView
                 android:id="@+id/forumSearch"
@@ -51,10 +51,10 @@
                 android:layout_height="@dimen/dimen_24"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:contentDescription="@string/description"
                 android:src="@drawable/search" />
 
         </RelativeLayout>
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -63,33 +63,39 @@
             android:layout_marginTop="@dimen/dimen_32"
             android:background="@drawable/corner_radius">
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/forumTabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_28">
+            <RadioGroup
+                android:id="@+id/rg_forum"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_40"
+                android:background="@drawable/rb_background"
+                android:orientation="horizontal">
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <RadioButton
+                    android:id="@+id/rb_feeds"
+                    style="@style/RadioButton"
+                    android:checked="true"
+                    android:button="@null"
                     android:text="@string/feeds" />
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <RadioButton
+                    android:id="@+id/rb_chats"
+                    style="@style/RadioButton"
+                    android:checked="false"
+                    android:button="@null"
                     android:text="@string/chats" />
 
-            </com.google.android.material.tabs.TabLayout>
+            </RadioGroup>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/forumChatRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/forumTabLayout"
+                android:layout_below="@+id/rg_forum"
                 android:layout_marginTop="@dimen/dimen_24" />
 
         </RelativeLayout>
-
 
     </RelativeLayout>
 
