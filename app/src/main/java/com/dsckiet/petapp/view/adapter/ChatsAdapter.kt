@@ -19,7 +19,7 @@ class ChatsAdapter(private val context: Context) : RecyclerView.Adapter<ChatsAda
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.chats_item, parent, false)
+                .inflate(R.layout.item_chats, parent, false)
 
         return ViewHolder(itemView)
     }

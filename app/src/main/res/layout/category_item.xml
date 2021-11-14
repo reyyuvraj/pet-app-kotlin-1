@@ -11,8 +11,8 @@
         android:id="@+id/iv_box"
         android:layout_width="105dp"
         android:layout_height="46dp"
-        android:src="@drawable/rectangle"
-        android:contentDescription="@string/description" />
+        android:contentDescription="@string/description"
+        android:src="@drawable/rectangle" />
 
     <ImageView
         android:id="@+id/iv_dog"

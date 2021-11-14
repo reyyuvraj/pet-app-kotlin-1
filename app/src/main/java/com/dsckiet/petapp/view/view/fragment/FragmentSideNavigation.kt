@@ -26,8 +26,8 @@ class FragmentSideNavigation : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.closeSideNav.setOnClickListener {
+        /*binding.closeSideNav.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentsidenav_to_homeFragment)
-        }
+        }*/
     }
 }

@@ -80,7 +80,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
+            <!--<androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_topRecyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
@@ -88,14 +88,53 @@
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal"
                 tools:itemCount="5"
-                tools:listitem="@layout/home_category_item" />
+                tools:listitem="@layout/home_category_item" />-->
+
+            <RadioGroup
+                android:id="@+id/rg_pet_categories"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_56"
+                android:layout_below="@id/txt1"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="@dimen/dimen_28"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_dog"
+                    style="@style/RadioButtonPetCategories"
+                    android:checked="true"
+                    android:button="@null"
+                    android:text="@string/dog" />
+
+                <RadioButton
+                    android:id="@+id/rb_cat"
+                    style="@style/RadioButtonPetCategories"
+                    android:checked="false"
+                    android:button="@null"
+                    android:text="@string/cat" />
+
+                <RadioButton
+                    android:id="@+id/rb_bird"
+                    style="@style/RadioButtonPetCategories"
+                    android:checked="false"
+                    android:button="@null"
+                    android:text="@string/bird" />
+
+                <RadioButton
+                    android:id="@+id/rb_fish"
+                    style="@style/RadioButtonPetCategories"
+                    android:checked="false"
+                    android:button="@null"
+                    android:text="@string/fish" />
+
+            </RadioGroup>
+
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rl_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/bottom_nav"
             android:layout_below="@id/RV_bott"
             android:layout_marginTop="30dp"
             android:background="@drawable/corner_radius">
@@ -119,7 +158,7 @@
                 android:layout_marginTop="49dp"
                 android:background="#E5E5E5"
                 android:orientation="vertical"
-                tools:listitem="@layout/pet_item"
+                tools:listitem="@layout/item_pet"
 
                 >
 
@@ -128,17 +167,6 @@
 
         </RelativeLayout>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_nav"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:itemIconTint="@drawable/bottom_nav_color_selector"
-            app:itemTextColor="@drawable/bottom_nav_color_selector"
-            app:menu="@menu/bottom_nav_menu" />
     </RelativeLayout>
 
 </layout>
-
-
-

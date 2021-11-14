@@ -1,5 +1,6 @@
 package com.dsckiet.petapp.view.view.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import com.dsckiet.petapp.R
 import com.dsckiet.petapp.databinding.FragmentSignUp6Binding
 import com.dsckiet.petapp.view.model.PostOwnerData
 import com.dsckiet.petapp.view.model.PostRegister
+import com.dsckiet.petapp.view.view.activity.HomeActivity
 import com.dsckiet.petapp.view.viewmodel.ViewModel
 
 
@@ -70,7 +72,8 @@ class SignUpUploadedFragment : Fragment() {
                 Log.d(TAG, "onViewCreated: Observing")
                 if (it.isSuccessful) {
                     Toast.makeText(context, "Registration successful", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_signUp6Fragment_to_homeFragment)
+                    val intent = Intent(activity, HomeActivity::class.java)
+                    startActivity(intent)
                 } else {
                     val error = it.errorBody()
                     Log.d(TAG, "onViewCreated: ${error.toString()}")

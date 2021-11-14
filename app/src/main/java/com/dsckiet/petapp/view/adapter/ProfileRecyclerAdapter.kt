@@ -8,16 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dsckiet.petapp.R
 import com.dsckiet.petapp.view.profilemodel.Profile
-import kotlinx.android.synthetic.main.pet_item.view.*
+import kotlinx.android.synthetic.main.item_pet.view.*
 
-class ProfileRecyclerAdapter(private val context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ProfileRecyclerAdapter(private val context: Context) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var posts: List<Profile> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
 
         return ProfileRecyclerAdapter.profileViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.pet_item, parent, false), context)//messages is xml file
+                .inflate(R.layout.item_pet, parent, false), context
+        )//messages is xml file
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -29,19 +31,22 @@ class ProfileRecyclerAdapter(private val context: Context): RecyclerView.Adapter
     }
 
     override fun getItemCount(): Int {
-       return posts.size
+        return posts.size
     }
+
     fun submitList(blogList: List<Profile>) {
         posts = blogList
     }
-    class profileViewHolder(itemView: View, val context: Context) : RecyclerView.ViewHolder(itemView){
-        val profileimage=itemView.iv_profilepic
-        val ownernam=itemView.tv_petName
-        val age=itemView.tv_age
-        val breed=itemView.tv_breed
-        val distance=itemView.tv_dis
 
-        fun bind(prof:Profile){
+    class profileViewHolder(itemView: View, val context: Context) :
+        RecyclerView.ViewHolder(itemView) {
+        val profileimage = itemView.iv_profilepic
+        val ownernam = itemView.tv_petName
+        val age = itemView.tv_age
+        val breed = itemView.tv_breed
+        val distance = itemView.tv_dis
+
+        fun bind(prof: Profile) {
             ownernam.setText(prof.ownername)
             age.setText(prof.petage)
             breed.setText(prof.breed)

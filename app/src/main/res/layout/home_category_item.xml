@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:id="@+id/bt_cat"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bt_cat"
     android:layout_width="110dp"
     android:layout_height="56dp"
+    android:layout_marginStart="25dp"
     android:layout_toEndOf="@id/bt_dog"
     app:cardBackgroundColor="#FFFFFF"
-    app:cardCornerRadius="43dp"
-    android:layout_marginStart="25dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:cardCornerRadius="43dp">
 
 
     <LinearLayout
@@ -21,8 +21,8 @@
             android:layout_marginStart="17dp"
             android:layout_marginTop="14dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/green_dog"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            android:src="@drawable/green_dog" />
 
         <TextView
             android:id="@+id/tv_pet_type"

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/homeFragment3">
+    <fragment
+        android:id="@+id/homeFragment3"
+        android:name="com.dsckiet.petapp.view.view.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment3_to_fragmentSideNavigation"
+            app:destination="@id/fragmentSideNavigation" />
+        <action
+            android:id="@+id/action_homeFragment3_to_forumFragment2"
+            app:destination="@id/forumFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSideNavigation"
+        android:name="com.dsckiet.petapp.view.view.fragment.FragmentSideNavigation"
+        android:label="FragmentSideNavigation"
+        tools:layout="@layout/fragment_side_nav">
+        <action
+            android:id="@+id/action_fragmentSideNavigation_to_eventFragment2"
+            app:destination="@id/eventFragment2" />
+        <action
+            android:id="@+id/action_fragmentSideNavigation_to_forumFragment2"
+            app:destination="@id/forumFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/forumFragment2"
+        android:name="com.dsckiet.petapp.view.view.fragment.ForumFragment"
+        android:label="fragment_forum"
+        tools:layout="@layout/fragment_forum" >
+        <action
+            android:id="@+id/action_forumFragment2_to_particularChatFragment"
+            app:destination="@id/particularChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventFragment2"
+        android:name="com.dsckiet.petapp.view.view.fragment.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" />
+    <fragment
+        android:id="@+id/particularChatFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.ParticularChatFragment"
+        android:label="fragment_particular_chat"
+        tools:layout="@layout/fragment_particular_chat" />
+</navigation>

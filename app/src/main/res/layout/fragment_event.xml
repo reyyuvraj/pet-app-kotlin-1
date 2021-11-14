@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".view.view.fragment.EventFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/app_color">
 
-</FrameLayout>
+        <RelativeLayout
+            android:id="@+id/eventTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_32"
+            android:layout_marginTop="@dimen/dimen_50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/sideNavEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/description"
+                android:src="@drawable/menu" />
+
+            <TextView
+                android:id="@+id/eventMyConnection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_40"
+                android:layout_toEndOf="@+id/sideNavEvent"
+                android:fontFamily="@font/poppins"
+                android:text="@string/myConnections"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_text_24"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:id="@+id/eventSearch"
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/description"
+                android:src="@drawable/search" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/eventTop"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:background="@drawable/corner_radius">
+
+            <RadioGroup
+                android:id="@+id/rg_event"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_40"
+                android:background="@drawable/rb_background"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_recent"
+                    style="@style/RadioButton"
+                    android:button="@null"
+                    android:checked="false"
+                    android:text="@string/recent_for_event" />
+
+                <RadioButton
+                    android:id="@+id/rb_chats"
+                    style="@style/RadioButton"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="@string/upcoming_for_event" />
+
+            </RadioGroup>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/forumChatRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rg_event"
+                android:layout_marginTop="@dimen/dimen_24" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

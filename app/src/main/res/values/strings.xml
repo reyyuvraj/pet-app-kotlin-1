@@ -51,4 +51,12 @@
     <string name="about_owner">About Owner</string>
     <string name="your_name">Your name</string>
     <string name="username">Username</string>
+    <string name="overline">¯</string>
+    <string name="recent_for_event">Recent</string>
+    <string name="upcoming_for_event">Upcoming</string>
+    <string name="sample_id">YashinSingh01</string>
+    <string name="sample_password">password</string>
+    <string name="cat">Cat</string>
+    <string name="bird">Bird</string>
+    <string name="fish">Fish</string>
 </resources>

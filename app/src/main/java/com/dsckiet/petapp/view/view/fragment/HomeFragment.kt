@@ -33,10 +33,6 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
-        navController = findNavController()
-
-        binding.bottomNav.setupWithNavController(navController)
-
         return binding.root
     }
 
@@ -44,7 +40,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_recyclerView)
-        val topRecycler:RecyclerView=view.findViewById(R.id.rv_topRecyclerview)
+        //val topRecycler:RecyclerView=view.findViewById(R.id.rv_topRecyclerview)
 
 
         recyclerView.apply {
@@ -55,24 +51,24 @@ class HomeFragment : Fragment() {
         val data2 = PetProfileDataSource.createDataSet()
         profileAdapter.submitList(data2)
 
-        topRecycler.apply {
+        /*topRecycler.apply {
             layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
             categoryAdapter= CategoriesRecyclerAdapter(requireContext())
             adapter=categoryAdapter
 
         }
         val data3 =CategoriesDataSource.createDataSet()
-        categoryAdapter.submitcateg(data3)
+        categoryAdapter.submitcateg(data3)*/
 
 
 
-        binding.IVLocation.setOnClickListener {
+        /*binding.IVLocation.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_userprofileFragment)
         }
 
         binding.ivMenu.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_fragmentsidenav)
-        }
+        }*/
     }
 
     fun onSupportNavigateUp(): Boolean {
