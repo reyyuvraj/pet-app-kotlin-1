@@ -156,7 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="49dp"
-                android:background="#E5E5E5"
+                android:background="@color/white"
                 android:orientation="vertical"
                 tools:listitem="@layout/item_pet"
 

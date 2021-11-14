@@ -17,14 +17,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/iv_profilepic"
-            android:layout_width="141dp"
-            android:layout_height="139dp"
-            android:layout_marginLeft="17dp"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_profile_pic"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="17dp"
             android:layout_marginTop="13dp"
             android:layout_marginBottom="12dp"
-            android:src="@drawable/profile" />
+            app:cardCornerRadius="@dimen/dimen_40">
+
+            <ImageView
+                android:id="@+id/iv_profilepic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tv_petName"
@@ -32,7 +40,7 @@
             android:layout_height="36dp"
             android:layout_marginStart="19dp"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/iv_profilepic"
+            android:layout_toEndOf="@id/card_profile_pic"
             android:fontFamily="@font/poppins_medium"
             android:text="Pet Name"
             android:textColor="#455A64"
@@ -44,7 +52,7 @@
             android:layout_height="30dp"
             android:layout_marginStart="143dp"
             android:layout_marginTop="13dp"
-            android:layout_toEndOf="@id/iv_profilepic"
+            android:layout_toEndOf="@id/card_profile_pic"
             app:cardBackgroundColor="#455A64"
             app:cardCornerRadius="100dp">
 
@@ -57,7 +65,8 @@
                     android:layout_width="7dp"
                     android:layout_height="14dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="13dp"
+                    android:layout_marginStart="13dp"
+                    android:elevation="@dimen/dimen_40"
                     android:src="@drawable/arrow" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -68,7 +77,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="19dp"
             android:layout_marginTop="47dp"
-            android:layout_toEndOf="@id/iv_profilepic"
+            android:layout_toEndOf="@id/card_profile_pic"
             android:fontFamily="@font/poppins_medium"
             android:text="Breed"
             android:textColor="#455A64"
@@ -80,7 +89,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="19dp"
             android:layout_marginTop="76dp"
-            android:layout_toEndOf="@id/iv_profilepic"
+            android:layout_toEndOf="@id/card_profile_pic"
             android:fontFamily="@font/poppins_medium"
             android:text="Pet Age"
             android:textColor="#898989"
@@ -92,7 +101,7 @@
             android:layout_height="25dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="127dp"
-            android:layout_toEndOf="@id/iv_profilepic"
+            android:layout_toEndOf="@id/card_profile_pic"
             android:src="@drawable/locate" />
 
         <TextView
@@ -101,7 +110,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="51dp"
             android:layout_marginTop="128dp"
-            android:layout_toEndOf="@id/iv_profilepic"
+            android:layout_toEndOf="@id/card_profile_pic"
             android:fontFamily="@font/poppins_medium"
             android:text="Distance: 4Km"
             android:textColor="#455A64"

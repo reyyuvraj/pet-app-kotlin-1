@@ -15,6 +15,12 @@
         <action
             android:id="@+id/action_homeFragment3_to_forumFragment2"
             app:destination="@id/forumFragment2" />
+        <action
+            android:id="@+id/action_homeFragment3_to_userprofileFragment"
+            app:destination="@id/userprofileFragment" />
+        <action
+            android:id="@+id/action_homeFragment3_to_homeSortFragment"
+            app:destination="@id/homeSortFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentSideNavigation"
@@ -47,4 +53,15 @@
         android:name="com.dsckiet.petapp.view.view.fragment.ParticularChatFragment"
         android:label="fragment_particular_chat"
         tools:layout="@layout/fragment_particular_chat" />
+    <fragment
+        android:id="@+id/userprofileFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.UserprofileFragment"
+        android:label="UserprofileFragment"
+        tools:layout="@layout/fragment_userprofile"/>
+    <dialog
+        android:id="@+id/homeSortFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.HomeSortFragment"
+        android:label="HomeSortFragment"
+        tools:layout="@layout/bottom_sheet_home_sort">
+    </dialog>
 </navigation>

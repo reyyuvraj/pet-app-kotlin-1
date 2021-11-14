@@ -89,7 +89,7 @@
             </RadioGroup>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/forumChatRecyclerView"
+                android:id="@+id/forumRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/rg_forum"

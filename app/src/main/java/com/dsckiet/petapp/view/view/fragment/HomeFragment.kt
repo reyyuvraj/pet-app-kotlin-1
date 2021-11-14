@@ -51,6 +51,10 @@ class HomeFragment : Fragment() {
         val data2 = PetProfileDataSource.createDataSet()
         profileAdapter.submitList(data2)
 
+        binding.tvSort.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment3_to_homeSortFragment)
+        }
+
         /*topRecycler.apply {
             layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
             categoryAdapter= CategoriesRecyclerAdapter(requireContext())
