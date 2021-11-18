@@ -1,6 +1,7 @@
 package com.dsckiet.petapp.view.view.activity
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -20,6 +21,20 @@ class HomeActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.container_view_home) as NavHostFragment
 
         navController = navHostFragment.navController
+        
+        /*navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.eventFragment2 -> {
+                    collapsing_appbar.visibility = View.GONE
+                }
+                R.id.forumFragment2 -> {
+                    collapsing_appbar.visibility = View.GONE
+                }
+                else -> {
+                    collapsing_appbar.visibility = View.VISIBLE
+                }
+            }
+        }*/
 
         bottom_nav.setupWithNavController(navController)
     }

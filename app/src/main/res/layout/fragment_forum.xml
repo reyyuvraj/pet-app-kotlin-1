@@ -10,58 +10,28 @@
     </data>
 
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/app_color">
 
-        <RelativeLayout
-            android:id="@+id/forumTop"
+        <include
+            android:id="@+id/forum_common_toolbar"
+            layout="@layout/common_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dimen_32"
-            android:layout_marginTop="@dimen/dimen_50"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/sideNavForum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:contentDescription="@string/description"
-                android:src="@drawable/menu" />
-
-            <TextView
-                android:id="@+id/forumMyConnection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dimen_40"
-                android:layout_toEndOf="@+id/sideNavForum"
-                android:fontFamily="@font/poppins"
-                android:text="@string/myConnections"
-                android:textColor="@color/white"
-                android:textSize="@dimen/dimen_text_24"
-                tools:ignore="RelativeOverlap" />
-
-            <ImageView
-                android:id="@+id/forumSearch"
-                android:layout_width="@dimen/dimen_24"
-                android:layout_height="@dimen/dimen_24"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:contentDescription="@string/description"
-                android:src="@drawable/search" />
-
-        </RelativeLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/forumTop"
-            android:layout_marginTop="@dimen/dimen_32"
-            android:background="@drawable/corner_radius">
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forum_common_toolbar">
 
             <RadioGroup
                 android:id="@+id/rg_forum"
@@ -75,15 +45,15 @@
                 <RadioButton
                     android:id="@+id/rb_feeds"
                     style="@style/RadioButton"
-                    android:checked="false"
                     android:button="@null"
+                    android:checked="false"
                     android:text="@string/feeds" />
 
                 <RadioButton
                     android:id="@+id/rb_chats"
                     style="@style/RadioButton"
-                    android:checked="true"
                     android:button="@null"
+                    android:checked="true"
                     android:text="@string/chats" />
 
             </RadioGroup>
@@ -93,10 +63,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/rg_forum"
-                android:layout_marginTop="@dimen/dimen_24" />
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginBottom="?attr/actionBarSize" />
 
         </RelativeLayout>
 
-    </RelativeLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/forum_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:layout_marginBottom="96dp"
+            android:backgroundTint="@color/bluish_gray"
+            android:contentDescription="@string/description"
+            android:src="@drawable/ic_baseline_add_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:tint="@color/bluish_gray"
+            app:borderWidth="@dimen/dimen_0"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

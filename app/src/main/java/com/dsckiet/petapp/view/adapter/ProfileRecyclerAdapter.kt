@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dsckiet.petapp.R
@@ -27,6 +28,10 @@ class ProfileRecyclerAdapter(private val context: Context) :
             is ProfileRecyclerAdapter.profileViewHolder -> {
                 holder.bind(posts.get(position))
             }
+        }
+
+        holder.itemView.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment3_to_userprofileFragment)
         }
     }
 

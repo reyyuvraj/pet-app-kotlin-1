@@ -1,5 +1,8 @@
 package com.dsckiet.petapp.view.model
 
 data class ItemRecent (
-    val profileImage: Any = Any()
+    val profileImage: Int,
+    val name: String = "Dave",
+    val messages: String = "",
+    val chatTime: String = "10:10"
 )

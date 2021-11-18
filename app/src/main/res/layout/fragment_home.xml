@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -15,60 +14,13 @@
         tools:context=".view.view.fragment.HomeFragment">
 
         <RelativeLayout
-
-            android:id="@+id/topBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/iv_menu"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="30dp"
-                android:src="@drawable/menu"
-                android:contentDescription="@string/description" />
-
-            <TextView
-                android:id="@+id/TV_locate"
-                android:layout_width="67dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="185dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/lucknow"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/IV_location"
-                android:layout_width="20dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="159dp"
-                android:layout_marginEnd="6dp"
-                android:src="@drawable/location"
-                android:contentDescription="@string/description" />
-
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="30dp"
-                android:src="@drawable/search"
-                android:contentDescription="@string/description" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
             android:id="@+id/RV_bott"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/topBar"
             android:layout_marginTop="30dp"
             android:orientation="vertical">
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/txt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,7 +30,7 @@
                 android:text="@string/pet_categories"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold" />-->
 
             <!--<androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_topRecyclerview"
@@ -94,37 +46,36 @@
                 android:id="@+id/rg_pet_categories"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_56"
-                android:layout_below="@id/txt1"
+                android:layout_marginHorizontal="@dimen/dimen_28"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="@dimen/dimen_28"
                 android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rb_dog"
                     style="@style/RadioButtonPetCategories"
-                    android:checked="true"
                     android:button="@null"
+                    android:checked="true"
                     android:text="@string/dog" />
 
                 <RadioButton
                     android:id="@+id/rb_cat"
                     style="@style/RadioButtonPetCategories"
-                    android:checked="false"
                     android:button="@null"
+                    android:checked="false"
                     android:text="@string/cat" />
 
                 <RadioButton
                     android:id="@+id/rb_bird"
                     style="@style/RadioButtonPetCategories"
-                    android:checked="false"
                     android:button="@null"
+                    android:checked="false"
                     android:text="@string/bird" />
 
                 <RadioButton
                     android:id="@+id/rb_fish"
                     style="@style/RadioButtonPetCategories"
-                    android:checked="false"
                     android:button="@null"
+                    android:checked="false"
                     android:text="@string/fish" />
 
             </RadioGroup>
@@ -156,6 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="49dp"
+                android:layout_marginBottom="?attr/actionBarSize"
                 android:background="@color/white"
                 android:orientation="vertical"
                 tools:listitem="@layout/item_pet"

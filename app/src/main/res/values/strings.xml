@@ -60,4 +60,11 @@
     <string name="bird">Bird</string>
     <string name="fish">Fish</string>
     <string name="feed_name">Rakesh</string>
+    <string name="type">Type</string>
+    <string name="breeding">Breeding</string>
+    <string name="walking">Walking</string>
+    <string name="create_description">Description</string>
+    <string name="description_hint">Anything you want to add…</string>
+    <string name="search">Search</string>
+    <string name="sideNavigation">Side Navigation</string>
 </resources>
