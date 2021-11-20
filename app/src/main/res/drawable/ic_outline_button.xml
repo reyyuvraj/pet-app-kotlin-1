@@ -1,11 +1,9 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="155dp"
-    android:height="54dp"
-    android:viewportWidth="155"
-    android:viewportHeight="54">
-  <path
-      android:pathData="M27,1.5L128,1.5A25.5,25.5 0,0 1,153.5 27L153.5,27A25.5,25.5 0,0 1,128 52.5L27,52.5A25.5,25.5 0,0 1,1.5 27L1.5,27A25.5,25.5 0,0 1,27 1.5z"
-      android:strokeWidth="3"
-      android:fillColor="#00000000"
-      android:strokeColor="#455A64"/>
-</vector>
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_enabled="true">
+    <shape android:shape="rectangle">
+      <corners android:radius="30dp"/>
+      <stroke android:color="@color/bluish_gray" android:width="@dimen/dimen_3"/>
+    </shape>
+  </item>
+</selector>

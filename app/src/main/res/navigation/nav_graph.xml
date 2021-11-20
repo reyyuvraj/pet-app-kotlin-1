@@ -17,13 +17,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/signup2Fragment"
@@ -91,53 +84,8 @@
         android:name="com.dsckiet.petapp.view.view.fragment.SignUpUploadedFragment"
         android:label="signUp6Fragment"
         tools:layout="@layout/fragment_sign_up6">
-        <action
-            android:id="@+id/action_signUp6Fragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
         <argument
             android:name="postOwnerData"
             app:argType="com.dsckiet.petapp.view.model.PostOwnerData" />
-    </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.dsckiet.petapp.view.view.fragment.HomeFragment"
-        android:label="HomeFragment"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_userprofileFragment"
-            app:destination="@id/userprofileFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_homeFragment_to_fragmentsidenav"
-            app:destination="@id/fragmentsidenav"
-            app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_right"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left" />
-    </fragment>
-    <fragment
-        android:id="@+id/userprofileFragment"
-        android:name="com.dsckiet.petapp.view.view.fragment.UserprofileFragment"
-        android:label="fragment_userprofile"
-        tools:layout="@layout/fragment_userprofile" />
-    <fragment
-        android:id="@+id/fragmentsidenav"
-        android:name="com.dsckiet.petapp.view.view.fragment.FragmentSideNavigation"
-        android:label="Fragmentsidenav"
-        tools:layout="@layout/fragment_side_nav">
-        <action
-            android:id="@+id/action_fragmentsidenav_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>

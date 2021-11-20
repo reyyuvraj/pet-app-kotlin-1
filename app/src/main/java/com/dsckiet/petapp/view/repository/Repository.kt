@@ -17,6 +17,9 @@ class Repository constructor(val application: Application) {
     val registerData = MutableLiveData<Response<RegisterResponse>>()
     val loginData = MutableLiveData<Response<LoginResponse>>()
     val chatData = MutableLiveData<ChatsItem>()
+    val feedsData = MutableLiveData<FeedsItem>()
+    val upcomingData = MutableLiveData<ItemUpcoming>()
+    val recentData = MutableLiveData<ItemRecent>()
     val TAG = "Repository"
 
     fun postRegister(postRegister: PostOwnerData) {
@@ -77,4 +80,10 @@ class Repository constructor(val application: Application) {
 
     fun getChatList(){
     }
+
+    fun getFeedsList(){}
+
+    fun getUpcomingList(){}
+
+    fun getRecentList(){}
 }

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.view.fragment.EventFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_color">
+
+        <include
+            android:id="@+id/event_common_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/event_common_toolbar"
+            android:layout_marginBottom="?attr/actionBarSize"
+            android:background="@drawable/corner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_common_toolbar">
+
+            <RadioGroup
+                android:id="@+id/rg_event"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_40"
+                android:background="@drawable/rb_background"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_recent"
+                    style="@style/RadioButton"
+                    android:button="@null"
+                    android:checked="false"
+                    android:text="@string/recent_for_event" />
+
+                <RadioButton
+                    android:id="@+id/rb_upcoming"
+                    style="@style/RadioButton"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="@string/upcoming_for_event" />
+
+            </RadioGroup>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/eventRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rg_event"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginBottom="?attr/actionBarSize" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/event_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:layout_marginBottom="96dp"
+            android:backgroundTint="@color/bluish_gray"
+            android:contentDescription="@string/description"
+            android:padding="@dimen/dimen_0"
+            android:src="@drawable/ic_baseline_add_24"
+            app:borderWidth="@dimen/dimen_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

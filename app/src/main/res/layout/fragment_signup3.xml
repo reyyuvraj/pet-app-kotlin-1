@@ -60,10 +60,10 @@
               android:layout_height="102dp"
               android:layout_below="@id/tv_category"
               android:layout_marginTop="20dp"
-              android:numColumns="3"
               android:gravity="center"
+              android:numColumns="3"
               android:verticalSpacing="11dp"
-              tools:listitem="@layout/category_item"/>
+              tools:listitem="@layout/category_item" />
 
 
 

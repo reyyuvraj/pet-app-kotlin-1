@@ -38,12 +38,12 @@
             </androidx.cardview.widget.CardView>
 
             <ImageView
+                android:id="@+id/tv_doggy"
                 android:layout_width="match_parent"
                 android:layout_height="410dp"
-                android:src="@drawable/doggy"
-                android:foregroundGravity="clip_horizontal"
                 android:layout_alignParentTop="true"
-                android:id="@+id/tv_doggy" />
+                android:foregroundGravity="clip_horizontal"
+                android:src="@drawable/doggy" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="351dp"
@@ -130,8 +130,8 @@
                 android:layout_height="21dp"
                 android:layout_below="@id/tv_name"
                 android:layout_marginLeft="30dp"
-                android:text="owner"
                 android:fontFamily="@font/poppins_medium"
+                android:text="owner"
                 android:textColor="#878787"
                 android:textSize="14sp" />
 
@@ -140,12 +140,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_owner"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus commodo viverra facilisi nunc, pretium arcu, consequat ut. Ut egestas pretium est arcu enim mauris leo et."
+                android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="10dp"
-                android:textSize="16sp"
-                android:textColor="#000000"
                 android:fontFamily="@font/poppins_medium"
-                android:layout_marginHorizontal="30dp" />
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus commodo viverra facilisi nunc, pretium arcu, consequat ut. Ut egestas pretium est arcu enim mauris leo et."
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/loginbtn"

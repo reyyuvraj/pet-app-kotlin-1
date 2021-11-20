@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.view.fragment.NewFeedFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize">
+
+        <include
+            android:id="@+id/feed_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/feed_image"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:background="@color/gray"
+            android:contentDescription="@string/add_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feed_toolbar" />
+
+        <EditText
+            android:id="@+id/feed_event_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:autofillHints="name"
+            android:hint="@string/newFeedEventHeading"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feed_image" />
+
+        <EditText
+            android:id="@+id/feed_caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:autofillHints="name"
+            android:hint="@string/caption"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feed_event_heading" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/feed_to_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginBottom="@dimen/dimen_20"
+            android:background="@drawable/ic_outline_button"
+            android:fontFamily="@font/poppins"
+            android:text="@string/gallery"
+            android:textAllCaps="false"
+            android:textColor="@color/bluish_gray"
+            android:textSize="@dimen/dimen_text_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_caption" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/feed_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:layout_marginBottom="@dimen/dimen_20"
+            android:background="@drawable/ic_button_solid"
+            android:paddingHorizontal="@dimen/dimen_40"
+            android:text="@string/post"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_24"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_caption"
+            app:layout_goneMarginEnd="@dimen/dimen_20" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

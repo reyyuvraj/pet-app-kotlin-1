@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/rg_pet_categories"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_56"
+        android:layout_marginHorizontal="@dimen/dimen_28"
+        android:background="@color/app_color"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_dog"
+            style="@style/RadioButtonPetCategories"
+            android:button="@null"
+            android:checked="true"
+            android:text="@string/dog" />
+
+        <RadioButton
+            android:id="@+id/rb_cat"
+            style="@style/RadioButtonPetCategories"
+            android:button="@null"
+            android:checked="false"
+            android:text="@string/cat" />
+
+        <RadioButton
+            android:id="@+id/rb_bird"
+            style="@style/RadioButtonPetCategories"
+            android:button="@null"
+            android:checked="false"
+            android:text="@string/bird" />
+
+        <RadioButton
+            android:id="@+id/rb_fish"
+            style="@style/RadioButtonPetCategories"
+            android:button="@null"
+            android:checked="false"
+            android:text="@string/fish" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,10 +3,7 @@ package com.dsckiet.petapp.view.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.dsckiet.petapp.view.model.ChatsItem
-import com.dsckiet.petapp.view.model.LoginResponse
-import com.dsckiet.petapp.view.model.PostOwnerData
-import com.dsckiet.petapp.view.model.RegisterResponse
+import com.dsckiet.petapp.view.model.*
 import com.dsckiet.petapp.view.repository.Repository
 import retrofit2.Response
 
@@ -15,6 +12,9 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     val registerData: LiveData<Response<RegisterResponse>>
     val loginData: LiveData<Response<LoginResponse>>
     val chatData: LiveData<ChatsItem>
+    val feedData: LiveData<FeedsItem>
+    val upcomingData: LiveData<ItemUpcoming>
+    val recentData: LiveData<ItemRecent>
 
     private val repository = Repository(application)
 
@@ -22,6 +22,9 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         this.registerData = repository.registerData
         this.loginData = repository.loginData
         this.chatData = repository.chatData
+        this.feedData = repository.feedsData
+        this.upcomingData = repository.upcomingData
+        this.recentData = repository.recentData
     }
 
     fun postRegister(postRegister: PostOwnerData) {
@@ -34,5 +37,17 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     fun chatsList(){
         repository.getChatList()
+    }
+
+    fun feedsList(){
+        repository.getFeedsList()
+    }
+
+    fun upcomingList(){
+        repository.getUpcomingList()
+    }
+
+    fun recentList(){
+        repository.getRecentList()
     }
 }

@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PetApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.PetApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:forceDarkAllowed">false</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +13,46 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+    
+    <style name="RadioButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/rb_tab_background</item>
+        <item name="android:gravity">center</item>
+        <item name="elevation">10dp</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textColor">@drawable/rb_text_color</item>
+        <item name="android:textSize">@dimen/dimen_text_20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RadioButtonPetCategories">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/rb_category_background</item>
+        <item name="android:gravity">center</item>
+        <item name="elevation">10dp</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textColor">@drawable/rb_category_text_background</item>
+        <item name="android:textSize">@dimen/dimen_text_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_8</item>
+    </style>
+
+    <style name="RadioButtonCreateEvent">
+        <item name="android:layout_width">170dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/rb_event_background</item>
+        <item name="android:gravity">center</item>
+        <item name="elevation">10dp</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textColor">@drawable/rb_event_text_background</item>
+        <item name="android:textSize">@dimen/dimen_text_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_8</item>
     </style>
 </resources>

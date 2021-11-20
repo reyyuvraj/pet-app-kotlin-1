@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.view.fragment.CreateEventFragment">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/create_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/corner_radius">
+
+        <include
+            android:id="@+id/create_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_toolbar">
+
+            <TextView
+                android:id="@+id/create_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_text_20"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/create_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Event"
+                android:hint="@string/event"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_name" />
+
+            <TextView
+                android:id="@+id/create_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="@string/type"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_text_20"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_name_input" />
+
+            <RadioGroup
+                android:id="@+id/rg_create_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                app:layout_constraintTop_toBottomOf="@+id/create_type">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10">
+
+                    <RadioButton
+                        style="@style/RadioButtonCreateEvent"
+                        android:layout_marginEnd="@dimen/dimen_12"
+                        android:button="@null"
+                        android:checked="true"
+                        android:text="@string/breeding" />
+
+                    <RadioButton
+                        style="@style/RadioButtonCreateEvent"
+                        android:button="@null"
+                        android:checked="false"
+                        android:text="@string/adoption" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        style="@style/RadioButtonCreateEvent"
+                        android:layout_marginEnd="@dimen/dimen_12"
+                        android:button="@null"
+                        android:text="@string/walking" />
+
+                    <RadioButton
+                        style="@style/RadioButtonCreateEvent"
+                        android:button="@null"
+                        android:text="@string/caretaking" />
+
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/create_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:fontFamily="@font/poppins"
+                android:text="@string/create_description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen_text_20"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rg_create_event" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:autofillHints="Event"
+                android:hint="@string/description_hint"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/create_description" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/create_next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_32"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:background="@drawable/ic_solid_button"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
