@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dsckiet.petapp.R
@@ -41,18 +41,25 @@ class EventFragment : Fragment() {
 
         adapterChats = ChatsAdapter(requireContext())
 
-        if(binding.rgEvent.checkedRadioButtonId == R.id.rb_upcoming){
+        if (binding.rgEvent.checkedRadioButtonId == R.id.rb_upcoming) {
             eventRecyclerView.adapter = adapterChats
             adapterChats.setData(chatsStatic.getStaticChats())
         }
 
         binding.rgEvent.setOnCheckedChangeListener { radioGroup, i ->
-            if (i== R.id.rb_upcoming){
+            if (i == R.id.rb_upcoming) {
                 eventRecyclerView.adapter = adapterChats
                 adapterChats.setData(chatsStatic.getStaticChats())
-            } else if (i == R.id.rb_recent){
+            } else if (i == R.id.rb_recent) {
             }
         }
+
+        binding.eventCommonToolbar.toolbarTitle.text = "Event"
+
+        binding.eventFab.setOnClickListener {
+            findNavController().navigate(R.id.action_eventFragment2_to_createEventFragment)
+        }
+
     }
 
     /*override fun onResume() {

@@ -42,12 +42,19 @@
         <action
             android:id="@+id/action_forumFragment2_to_particularChatFragment"
             app:destination="@id/particularChatFragment" />
+        <action
+            android:id="@+id/action_forumFragment2_to_newFeedFragment"
+            app:destination="@id/newFeedFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventFragment2"
         android:name="com.dsckiet.petapp.view.view.fragment.EventFragment"
         android:label="fragment_event"
-        tools:layout="@layout/fragment_event" />
+        tools:layout="@layout/fragment_event" >
+        <action
+            android:id="@+id/action_eventFragment2_to_createEventFragment"
+            app:destination="@id/createEventFragment" />
+    </fragment>
     <fragment
         android:id="@+id/particularChatFragment"
         android:name="com.dsckiet.petapp.view.view.fragment.ParticularChatFragment"
@@ -64,4 +71,28 @@
         android:label="HomeSortFragment"
         tools:layout="@layout/bottom_sheet_home_sort">
     </dialog>
+    <fragment
+        android:id="@+id/createEventFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.CreateEventFragment"
+        android:label="fragment_create_event"
+        tools:layout="@layout/fragment_create_event" >
+        <action
+            android:id="@+id/action_createEventFragment_to_newFeedMoreFragment"
+            app:destination="@id/newFeedMoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createEventMoreFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.CreateEventMoreFragment"
+        android:label="fragment_create_event_more"
+        tools:layout="@layout/fragment_create_event_more" />
+    <fragment
+        android:id="@+id/newFeedFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.NewFeedFragment"
+        android:label="fragment_new_feed"
+        tools:layout="@layout/fragment_new_feed" />
+    <fragment
+        android:id="@+id/newFeedMoreFragment"
+        android:name="com.dsckiet.petapp.view.view.fragment.EventMoreFragment"
+        android:label="fragment_new_feed_more"
+        tools:layout="@layout/fragment_new_feed_more" />
 </navigation>

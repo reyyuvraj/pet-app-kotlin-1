@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.dsckiet.petapp.R
 import com.dsckiet.petapp.databinding.FragmentSideNavBinding
 
 class FragmentSideNavigation : Fragment() {
@@ -17,7 +15,7 @@ class FragmentSideNavigation : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSideNavBinding.inflate(layoutInflater)
 
         return binding.root
@@ -25,9 +23,5 @@ class FragmentSideNavigation : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        /*binding.closeSideNav.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentsidenav_to_homeFragment)
-        }*/
     }
 }

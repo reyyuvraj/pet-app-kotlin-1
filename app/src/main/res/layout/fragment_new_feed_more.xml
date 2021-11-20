@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.view.fragment.EventMoreFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/more_toolbar"
+            layout="@layout/common_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/more_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_text_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/more_toolbar" />
+
+        <LinearLayout
+            android:id="@+id/more_date_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/more_date">
+
+            <EditText
+                android:id="@+id/more_date_dd"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:gravity="center"
+                android:hint="@string/dd"
+                android:inputType="datetime"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/more_date_mm"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:gravity="center"
+                android:hint="@string/mm"
+                android:inputType="datetime"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/more_date_yy"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:gravity="center"
+                android:hint="@string/yy"
+                android:inputType="datetime"
+                tools:ignore="Autofill" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/more_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:fontFamily="@font/poppins"
+            android:text="@string/time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_text_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/more_date_ll" />
+
+        <LinearLayout
+            android:id="@+id/more_time_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/more_time">
+
+            <EditText
+                android:id="@+id/more_time_hh"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:gravity="center"
+                android:hint="@string/hh"
+                android:inputType="number"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/more_time_mm"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/mm"
+                android:inputType="number"
+                tools:ignore="Autofill" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/more_venue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:fontFamily="@font/poppins"
+            android:text="@string/venue"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_text_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/more_time_ll" />
+
+        <LinearLayout
+            android:id="@+id/more_venue_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/more_venue">
+
+            <Spinner
+                android:id="@+id/more_venue_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/more_visibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:fontFamily="@font/poppins"
+            android:text="@string/visibility"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_text_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/more_venue_ll" />
+
+        <LinearLayout
+            android:id="@+id/more_visibility_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/more_visibility">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:layout_weight="1"
+                android:background="@drawable/ic_outline_button"
+                android:fontFamily="@font/poppins"
+                android:text="@string/pub"
+                android:textAllCaps="false"
+                android:textColor="@color/bluish_gray"
+                android:textSize="@dimen/dimen_text_20" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_weight="1"
+                android:background="@drawable/ic_outline_button"
+                android:fontFamily="@font/poppins"
+                android:text="@string/pri"
+                android:textAllCaps="false"
+                android:textColor="@color/bluish_gray"
+                android:textSize="@dimen/dimen_text_20" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/more_bottom_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_marginBottom="@dimen/dimen_32"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/more_visibility_ll">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:layout_weight="1"
+                android:background="@drawable/ic_outline_button"
+                android:fontFamily="@font/poppins"
+                android:text="@string/back"
+                android:textAllCaps="false"
+                android:textColor="@color/bluish_gray"
+                android:textSize="@dimen/dimen_text_20" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_weight="1"
+                android:background="@drawable/ic_button_solid"
+                android:fontFamily="@font/poppins"
+                android:text="@string/done"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_text_20" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dsckiet.petapp.R
@@ -65,7 +64,7 @@ class ForumFragment : Fragment() {
             adapterChats.setData(chatsStatic.getStaticChats())
         }
 
-        binding.rgForum.setOnCheckedChangeListener { _ , i ->
+        binding.rgForum.setOnCheckedChangeListener { _, i ->
             if (i == R.id.rb_chats) {
                 forumRecyclerView.adapter = adapterChats
                 adapterChats.setData(chatsStatic.getStaticChats())
@@ -73,6 +72,10 @@ class ForumFragment : Fragment() {
                 forumRecyclerView.adapter = adapterFeeds
                 adapterFeeds.setData(feedsStatic.getStaticFeeds())
             }
+        }
+
+        binding.forumFab.setOnClickListener {
+            findNavController().navigate(R.id.action_forumFragment2_to_newFeedFragment)
         }
     }
 

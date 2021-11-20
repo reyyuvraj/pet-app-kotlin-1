@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
@@ -39,9 +39,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val toolbar = binding.homeToolbar
+
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_recyclerView)
         //val topRecycler:RecyclerView=view.findViewById(R.id.rv_topRecyclerview)
-
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -51,7 +52,7 @@ class HomeFragment : Fragment() {
         val data2 = PetProfileDataSource.createDataSet()
         profileAdapter.submitList(data2)
 
-        binding.tvSort.setOnClickListener {
+        binding.homeScrollable.tvSort.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment3_to_homeSortFragment)
         }
 

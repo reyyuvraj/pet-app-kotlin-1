@@ -4,7 +4,7 @@
     <string name="adoption">Adoption</string>
     <string name="caretaking">Caretaking</string>
     <string name="connection">Connections</string>
-    <string name="event">Event</string>
+    <string name="event">Events</string>
     <string name="map">View Map</string>
     <string name="settings">Settings</string>
     <string name="out">Log out</string>
@@ -67,4 +67,20 @@
     <string name="description_hint">Anything you want to add…</string>
     <string name="search">Search</string>
     <string name="sideNavigation">Side Navigation</string>
+    <string name="newFeedEventHeading">Event heading</string>
+    <string name="newFeedCaption">Caption that fits your mood…</string>
+    <string name="gallery">Gallery</string>
+    <string name="post">Post</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="venue">Venue</string>
+    <string name="visibility">Visibility</string>
+    <string name="back">Back</string>
+    <string name="hh">HH</string>
+    <string name="mm">MM</string>
+    <string name="dd">DD</string>
+    <string name="yy">YYYY</string>
+    <string name="pub">Public</string>
+    <string name="pri">Private</string>
+    <string name="caption">Caption that fits your mood…</string>
 </resources>

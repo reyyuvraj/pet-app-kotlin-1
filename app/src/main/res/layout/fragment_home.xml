@@ -1,124 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
     </data>
 
-    <RelativeLayout
-        android:id="@+id/RV_top"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#72E2B3"
-        tools:context=".view.view.fragment.HomeFragment">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:id="@+id/RV_bott"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical">
-
-            <!--<TextView
-                android:id="@+id/txt1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:height="27dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/pet_categories"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />-->
-
-            <!--<androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_topRecyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_below="@id/txt1"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
-                tools:itemCount="5"
-                tools:listitem="@layout/home_category_item" />-->
-
-            <RadioGroup
-                android:id="@+id/rg_pet_categories"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_56"
-                android:layout_marginHorizontal="@dimen/dimen_28"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/rb_dog"
-                    style="@style/RadioButtonPetCategories"
-                    android:button="@null"
-                    android:checked="true"
-                    android:text="@string/dog" />
-
-                <RadioButton
-                    android:id="@+id/rb_cat"
-                    style="@style/RadioButtonPetCategories"
-                    android:button="@null"
-                    android:checked="false"
-                    android:text="@string/cat" />
-
-                <RadioButton
-                    android:id="@+id/rb_bird"
-                    style="@style/RadioButtonPetCategories"
-                    android:button="@null"
-                    android:checked="false"
-                    android:text="@string/bird" />
-
-                <RadioButton
-                    android:id="@+id/rb_fish"
-                    style="@style/RadioButtonPetCategories"
-                    android:button="@null"
-                    android:checked="false"
-                    android:text="@string/fish" />
-
-            </RadioGroup>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_card"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/collapsing_appbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/RV_bott"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/corner_radius">
+            android:layout_height="240dp"
+            android:backgroundTint="@color/app_color"
+            android:fitsSystemWindows="true">
 
-            <TextView
-                android:id="@+id/tv_sort"
-                android:layout_width="56dp"
-                android:layout_height="24dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/sort_by"
-                android:textColor="#455A64" />
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_recyclerView"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="49dp"
-                android:layout_marginBottom="?attr/actionBarSize"
-                android:background="@color/white"
-                android:orientation="vertical"
-                tools:listitem="@layout/item_pet"
+                android:fitsSystemWindows="true"
+                app:collapsedTitleGravity="center_horizontal"
+                app:contentScrim="@color/app_color"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
 
-                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                    <include
+                        android:id="@+id/home_toolbar"
+                        layout="@layout/common_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/txt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:height="27dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/pet_categories"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    app:layout_collapseMode="pin" />
+
+                <include
+                    android:id="@+id/pet_rg"
+                    layout="@layout/pet_categories_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    app:layout_collapseMode="pin" />
 
 
-        </RelativeLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-    </RelativeLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <include
+                android:id="@+id/home_scrollable"
+                layout="@layout/home_scrollable_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>
