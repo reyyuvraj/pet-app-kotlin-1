@@ -160,23 +160,42 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/tv_noAccnt"
+            <LinearLayout
+                android:id="@+id/signUpLL"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_below="@id/loginbtn"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginbtn"
                 android:layout_marginTop="12dp"
-                android:fontFamily="@font/poppins"
                 android:gravity="center"
-                android:text="@string/create_account"
-                android:textColor="#A09999"
-                android:textSize="14sp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_noAccnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/create_account"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/dimen_text_16" />
+
+                <TextView
+                    android:id="@+id/goToSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/signUp"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/dimen_text_16"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/tv_using"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_below="@id/tv_noAccnt"
+                android:layout_below="@id/signUpLL"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center"

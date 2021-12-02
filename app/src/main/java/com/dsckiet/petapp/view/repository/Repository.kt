@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.dsckiet.petapp.view.call.RetrofitInstance
 import com.dsckiet.petapp.view.model.*
+import com.dsckiet.petapp.view.model.get.feeds.FeedsData
 import com.dsckiet.petapp.view.util.LocalKeyStorage
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,7 +18,7 @@ class Repository constructor(val application: Application) {
     val registerData = MutableLiveData<Response<RegisterResponse>>()
     val loginData = MutableLiveData<Response<LoginResponse>>()
     val chatData = MutableLiveData<ChatsItem>()
-    val feedsData = MutableLiveData<FeedsItem>()
+    val feedsData = MutableLiveData<FeedsData>()
     val upcomingData = MutableLiveData<ItemUpcoming>()
     val recentData = MutableLiveData<ItemRecent>()
     val TAG = "Repository"
@@ -58,6 +59,7 @@ class Repository constructor(val application: Application) {
                 call: Call<LoginResponse>,
                 response: Response<LoginResponse>
             ) {
+                Log.d("loginResponse", "onResponse: ${response.body()}")
                 val loginResponse = response.body()
                 val responseCode: Int = response.code()
                 var header: String? = response.headers().get("Set-Cookie")
@@ -78,12 +80,26 @@ class Repository constructor(val application: Application) {
         })
     }
 
-    fun getChatList(){
+    fun getChatList() {}
+
+    fun getFeedsList(cookie: String) {
+
+        val retrofitService = RetrofitInstance.getClient(application)
+        val callAPI = retrofitService.getFeed(cookie)
+
+        callAPI.enqueue(object : Callback<FeedsData>{
+            override fun onFailure(call: Call<FeedsData>, t: Throwable) {
+                Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<FeedsData>, response: Response<FeedsData>) {
+                Log.d("FeedData", "onResponse: ${response}")
+            }
+        })
+
     }
 
-    fun getFeedsList(){}
+    fun getUpcomingList() {}
 
-    fun getUpcomingList(){}
-
-    fun getRecentList(){}
+    fun getRecentList() {}
 }
