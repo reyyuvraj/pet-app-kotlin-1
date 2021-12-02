@@ -37,4 +37,10 @@ interface PetAPI {
         @Header("Cookie")
         cookie: String
     ) : Call<FeedsData>
+
+    @GET("https://ancient-earth-36601.herokuapp.com/user/get_all_feed/")
+    fun getFeedTest(
+        @Header("Cookie")
+        cookie: String
+    ) : Call<FeedsData>
 }

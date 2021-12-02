@@ -1,5 +1,6 @@
 package com.dsckiet.petapp.view.view.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dsckiet.petapp.R
 import com.dsckiet.petapp.databinding.FragmentSideNavBinding
+import com.dsckiet.petapp.view.view.activity.MainActivity
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -67,7 +69,21 @@ class FragmentSideNavigation : Fragment() {
         }
 
         binding.sideNavLogout.setOnClickListener {
+            val snackBar: Snackbar =
+                Snackbar.make(it, "Logged out", Snackbar.LENGTH_SHORT)
+            snackBar.animationMode = Snackbar.ANIMATION_MODE_SLIDE
+            snackBar.show()
+            safeLogout()
             TODO("create logout function")
         }
+    }
+
+    private fun logout() {
+        safeLogout()
+    }
+
+    private fun safeLogout() {
+        val intent = Intent(this.requireContext(), MainActivity::class.java)
+        startActivity(intent)
     }
 }

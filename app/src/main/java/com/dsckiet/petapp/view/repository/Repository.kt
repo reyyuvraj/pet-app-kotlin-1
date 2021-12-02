@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
+import com.dsckiet.petapp.view.call.PetAPI
 import com.dsckiet.petapp.view.call.RetrofitInstance
 import com.dsckiet.petapp.view.model.*
 import com.dsckiet.petapp.view.model.get.feeds.FeedsData
@@ -30,7 +31,7 @@ class Repository constructor(val application: Application) {
 
         callAPI.enqueue(object : Callback<RegisterResponse> {
             override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
-                Toast.makeText(application, "Error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(
@@ -96,6 +97,22 @@ class Repository constructor(val application: Application) {
                 Log.d("FeedData", "onResponse: ${response}")
             }
         })
+
+    }
+
+    fun getFeedTest(cookie: String){
+
+       /* val callAPI = getFeedTest(cookie = cookie)
+
+        callAPI.enqueue(object : Callback<FeedsData>{
+            override fun onFailure(call: Call<FeedsData>, t: Throwable) {
+                Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<FeedsData>, response: Response<FeedsData>) {
+                Log.d("FeedDataTest", "onResponse: ${response}")
+            }
+        })*/
 
     }
 
