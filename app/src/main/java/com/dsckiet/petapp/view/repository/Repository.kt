@@ -4,14 +4,16 @@ import android.app.Application
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import com.dsckiet.petapp.view.call.PetAPI
 import com.dsckiet.petapp.view.call.RetrofitInstance
 import com.dsckiet.petapp.view.model.*
-import com.dsckiet.petapp.view.model.get.feeds.FeedsData
+import com.dsckiet.petapp.view.model.get.feeds.FeedDataCheck
+import com.dsckiet.petapp.view.model.get.logout.Logout
+import com.dsckiet.petapp.view.model.post.RegisterResponse
 import com.dsckiet.petapp.view.util.LocalKeyStorage
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import timber.log.Timber
 
 class Repository constructor(val application: Application) {
 
@@ -19,7 +21,7 @@ class Repository constructor(val application: Application) {
     val registerData = MutableLiveData<Response<RegisterResponse>>()
     val loginData = MutableLiveData<Response<LoginResponse>>()
     val chatData = MutableLiveData<ChatsItem>()
-    val feedsData = MutableLiveData<FeedsData>()
+    val feedsData = MutableLiveData<FeedDataCheck>()
     val upcomingData = MutableLiveData<ItemUpcoming>()
     val recentData = MutableLiveData<ItemRecent>()
     val TAG = "Repository"
@@ -32,12 +34,18 @@ class Repository constructor(val application: Application) {
         callAPI.enqueue(object : Callback<RegisterResponse> {
             override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                 Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
+                Log.d("Signup", "onResponse: ${t.message}")
             }
 
             override fun onResponse(
                 call: Call<RegisterResponse>,
                 response: Response<RegisterResponse>
             ) {
+                Log.d("Signup", "onResponse: ${response.raw()}")
+                Log.d(TAG, "onResponse: ")
+                Log.d("Signup", "onResponse: ${response.body()}")
+                Log.d(TAG, "onResponse: $response")
+                Log.d("Signup", "onResponse: ${response.errorBody()}")
                 val registerResponse = response.body()
                 registerData.value = response
             }
@@ -53,13 +61,14 @@ class Repository constructor(val application: Application) {
 
         callAPI.enqueue(object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                Toast.makeText(application, "Error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(
                 call: Call<LoginResponse>,
                 response: Response<LoginResponse>
             ) {
+                Toast.makeText(application, "${response.message()}", Toast.LENGTH_SHORT).show()
                 Log.d("loginResponse", "onResponse: ${response.body()}")
                 val loginResponse = response.body()
                 val responseCode: Int = response.code()
@@ -88,35 +97,44 @@ class Repository constructor(val application: Application) {
         val retrofitService = RetrofitInstance.getClient(application)
         val callAPI = retrofitService.getFeed(cookie)
 
-        callAPI.enqueue(object : Callback<FeedsData>{
-            override fun onFailure(call: Call<FeedsData>, t: Throwable) {
+        callAPI.enqueue(object : Callback<FeedDataCheck> {
+            override fun onFailure(call: Call<FeedDataCheck>, t: Throwable) {
                 Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onResponse(call: Call<FeedsData>, response: Response<FeedsData>) {
+            override fun onResponse(call: Call<FeedDataCheck>, response: Response<FeedDataCheck>) {
                 Log.d("FeedData", "onResponse: ${response}")
+                Log.d("FeedData", "onResponse: ${response.body()}")
+                val feedData = response.body()
+                feedsData.value = feedData
             }
         })
-
-    }
-
-    fun getFeedTest(cookie: String){
-
-       /* val callAPI = getFeedTest(cookie = cookie)
-
-        callAPI.enqueue(object : Callback<FeedsData>{
-            override fun onFailure(call: Call<FeedsData>, t: Throwable) {
-                Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onResponse(call: Call<FeedsData>, response: Response<FeedsData>) {
-                Log.d("FeedDataTest", "onResponse: ${response}")
-            }
-        })*/
 
     }
 
     fun getUpcomingList() {}
 
     fun getRecentList() {}
+
+    fun getLogout(cookie: String) {
+
+        val retrofitService = RetrofitInstance.getClient(application)
+        val callApi = retrofitService.getLogout(cookie)
+
+        callApi.enqueue(object : Callback<Logout>{
+            override fun onFailure(call: Call<Logout>, t: Throwable) {
+                Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<Logout>, response: Response<Logout>) {
+                Log.d("Logout", "onResponse: ${response.message()}")
+            }
+        })
+    }
+
+    fun getGoogleAuth() {
+        val retrofitService = RetrofitInstance.getClient(application)
+        val callApi = retrofitService.getGoogleAuth()
+
+    }
 }

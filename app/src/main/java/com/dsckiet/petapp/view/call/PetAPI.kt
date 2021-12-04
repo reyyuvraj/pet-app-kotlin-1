@@ -3,10 +3,20 @@ package com.dsckiet.petapp.view.call
 import com.dsckiet.petapp.view.model.LoginResponse
 import com.dsckiet.petapp.view.model.PostLogin
 import com.dsckiet.petapp.view.model.PostOwnerData
-import com.dsckiet.petapp.view.model.RegisterResponse
-import com.dsckiet.petapp.view.model.get.feeds.FeedsData
+import com.dsckiet.petapp.view.model.body.CreateEventBody
+import com.dsckiet.petapp.view.model.body.FeedPostBody
+import com.dsckiet.petapp.view.model.body.ForumBody
+import com.dsckiet.petapp.view.model.get.AllEventTypes
+import com.dsckiet.petapp.view.model.get.PetBreed
+import com.dsckiet.petapp.view.model.get.PetCategory
+import com.dsckiet.petapp.view.model.get.feeds.FeedDataCheck
+import com.dsckiet.petapp.view.model.get.logout.Logout
+import com.dsckiet.petapp.view.model.post.*
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.POST
 
 interface PetAPI {
 
@@ -26,21 +36,63 @@ interface PetAPI {
         @Body loginBody: PostLogin
     ): Call<LoginResponse>
 
-//    @GET("/login/logout/")
-//    fun getLogout(
-//        @Header("token")
-//        token: String = "ok"
-//    )
+    @GET("/login/logout/")
+    fun getLogout(
+        @Header("token")
+        token: String = "ok"
+    ): Call<Logout>
+
+    @GET("/pet/get_category/")
+    fun getCategory(): Call<PetCategory>
+
+    @GET("/pet/get_breed/?category=1")
+    fun getBreed(): Call<PetBreed>
+
+    @POST("")
+    fun postFileUpload(
+        @Body file: String,
+        @Header("Authorization") auth: String = "Basic",
+        @Header("Cookie") cookie: String
+    ): Call<FileUpload>
+
+    @GET("/login/accounts/google/login/")
+    fun getFacebookAuth()
+
+    @GET("/login/accounts/google/login/")
+    fun getGoogleAuth()
+
+    @GET("/event/get_events/")
+    fun getAllEvents(): Call<AllEventTypes>
+
+    @POST("/event/event_create/")
+    fun postEvent(
+        @Body eventBody: CreateEventBody,
+        @Header("Cookie") cookie: String
+    ): Call<CreateEvent>
+
+    @POST("/user/forum_create/")
+    fun postForum(
+        @Body forumBody: ForumBody,
+        @Header("Cookie") cookie: String
+    ): Call<CreateForum>
+
+    @POST("/user/feed_img_upload/")
+    fun postImageUpload(): Call<FeedImageUpload>
+
+    @POST("/user/feed_create/")
+    fun postFeedPost(
+        @Body feedPostBody: FeedPostBody,
+        @Header("Cookie") cookie: String
+    ): Call<FeedPost>
 
     @GET("/user/get_all_feed/")
     fun getFeed(
         @Header("Cookie")
         cookie: String
-    ) : Call<FeedsData>
+    ): Call<FeedDataCheck>
 
-    @GET("https://ancient-earth-36601.herokuapp.com/user/get_all_feed/")
-    fun getFeedTest(
-        @Header("Cookie")
-        cookie: String
-    ) : Call<FeedsData>
+    @POST("/location/save_loc/")
+    fun postLocation(
+        @Body location: Location
+    )
 }
