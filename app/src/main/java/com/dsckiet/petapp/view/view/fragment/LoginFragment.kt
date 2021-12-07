@@ -72,6 +72,9 @@ class LoginFragment : Fragment() {
                         activity?.finish()
                         binding.loginBtnText.visibility = TextView.VISIBLE
                         binding.loginProgressBar.visibility = ProgressBar.GONE
+                    } else if (it.code() != 200) {
+                        binding.loginProgressBar.visibility = ProgressBar.GONE
+                        binding.loginBtnText.visibility = TextView.VISIBLE
                     } else {
                         val errorBody = it.errorBody()
                         Log.d("LoginFragment", "onViewCreated: ${errorBody.toString()}")

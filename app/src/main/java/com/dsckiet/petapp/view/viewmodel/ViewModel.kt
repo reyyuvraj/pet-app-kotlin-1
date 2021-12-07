@@ -4,15 +4,23 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.dsckiet.petapp.view.model.*
+import com.dsckiet.petapp.view.model.get.AllEventTypes
+import com.dsckiet.petapp.view.model.get.PetBreed
+import com.dsckiet.petapp.view.model.get.PetCategory
 import com.dsckiet.petapp.view.model.get.feeds.FeedDataCheck
 import com.dsckiet.petapp.view.model.post.RegisterResponse
 import com.dsckiet.petapp.view.repository.Repository
+import okhttp3.MultipartBody
 import retrofit2.Response
+import java.io.File
 
 class ViewModel(application: Application) : AndroidViewModel(application) {
 
     val registerData: LiveData<Response<RegisterResponse>>
     val loginData: LiveData<Response<LoginResponse>>
+    val categoryData: LiveData<PetCategory>
+    val breedData: LiveData<PetBreed>
+    val allEventsData: LiveData<AllEventTypes>
     val chatData: LiveData<ChatsItem>
     val feedData: LiveData<FeedDataCheck>
     val upcomingData: LiveData<ItemUpcoming>
@@ -23,6 +31,9 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     init {
         this.registerData = repository.registerData
         this.loginData = repository.loginData
+        this.categoryData = repository.categoryData
+        this.breedData = repository.breedData
+        this.allEventsData = repository.allEventsData
         this.chatData = repository.chatData
         this.feedData = repository.feedsData
         this.upcomingData = repository.upcomingData
@@ -35,6 +46,22 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     fun postLogin(password: String, username: String) {
         repository.postLogin(password, username)
+    }
+
+    fun getLogout(cookie: String) {
+        repository.getLogout(cookie)
+    }
+
+    fun getCategory(){
+        repository.getCategory()
+    }
+
+    fun getBreed(){
+        repository.getBreed()
+    }
+
+    fun getAllEvents(){
+        repository.getAllEvents()
     }
 
     fun chatsList() {
@@ -57,7 +84,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         repository.getGoogleAuth()
     }
 
-    fun getLogout(cookie: String) {
-        repository.getLogout(cookie)
+    fun postFeedImage(file: MultipartBody.Part, cookie: String){
+        repository.postImageUpload(file, cookie)
     }
 }

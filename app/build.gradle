@@ -109,4 +109,8 @@ dependencies {
     implementation "com.squareup.moshi:moshi:$version_moshi"
     implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
     annotationProcessor "com.squareup.moshi:moshi-kotlin-codegen:$version_moshi"
+
+    //image upload
+    def uploadServiceVersion = "3.5.2"
+    implementation "net.gotev:uploadservice:$uploadServiceVersion"
 }

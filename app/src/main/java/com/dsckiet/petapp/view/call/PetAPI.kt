@@ -13,10 +13,19 @@ import com.dsckiet.petapp.view.model.get.feeds.FeedDataCheck
 import com.dsckiet.petapp.view.model.get.logout.Logout
 import com.dsckiet.petapp.view.model.post.*
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
+import okhttp3.MultipartBody
+
+import okhttp3.RequestBody
+
+import okhttp3.OkHttpClient
+import retrofit2.http.*
 import retrofit2.http.POST
+
+import retrofit2.http.Multipart
+
+
+
+
 
 interface PetAPI {
 
@@ -76,8 +85,12 @@ interface PetAPI {
         @Header("Cookie") cookie: String
     ): Call<CreateForum>
 
+    @Multipart
     @POST("/user/feed_img_upload/")
-    fun postImageUpload(): Call<FeedImageUpload>
+    fun postImageUpload(
+        @Part file: MultipartBody.Part,
+        @Header("Cookie") cookie: String
+    ): Call<RequestBody>
 
     @POST("/user/feed_create/")
     fun postFeedPost(
@@ -95,4 +108,12 @@ interface PetAPI {
     fun postLocation(
         @Body location: Location
     )
+
+    @Multipart
+    @POST("upload")
+    fun uploadImage(
+        @Part part: MultipartBody.Part?,
+        @Part("somedata") requestBody: RequestBody?
+    ): Call<RequestBody?>?
+
 }
