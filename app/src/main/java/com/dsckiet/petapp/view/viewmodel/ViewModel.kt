@@ -11,8 +11,8 @@ import com.dsckiet.petapp.view.model.get.feeds.FeedDataCheck
 import com.dsckiet.petapp.view.model.post.RegisterResponse
 import com.dsckiet.petapp.view.repository.Repository
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
-import java.io.File
 
 class ViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -52,15 +52,15 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         repository.getLogout(cookie)
     }
 
-    fun getCategory(){
+    fun getCategory() {
         repository.getCategory()
     }
 
-    fun getBreed(){
+    fun getBreed() {
         repository.getBreed()
     }
 
-    fun getAllEvents(){
+    fun getAllEvents() {
         repository.getAllEvents()
     }
 
@@ -84,7 +84,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         repository.getGoogleAuth()
     }
 
-    fun postFeedImage(file: MultipartBody.Part, cookie: String){
-        repository.postImageUpload(file, cookie)
+    fun postFeedImage(file: RequestBody, multipartFile: MultipartBody.Part, cookie: String) {
+        repository.postImageUpload(file, multipartFile, cookie)
     }
 }

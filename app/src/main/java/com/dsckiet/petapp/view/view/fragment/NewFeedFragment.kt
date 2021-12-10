@@ -1,8 +1,10 @@
 package com.dsckiet.petapp.view.view.fragment
 
 import android.content.Intent
+import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
@@ -31,6 +33,7 @@ class NewFeedFragment : Fragment() {
     private lateinit var utility: Utility
     val pickImage = 1
     var path: String? = null
+    private lateinit var file: File
 
 
     override fun onCreateView(
@@ -87,6 +90,7 @@ class NewFeedFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == pickImage) {
             val pickedImage: Uri? = data?.data
+            val imagePath = pickedImage?.path
             pickedImage?.let {
                 val bitmap = utility.uriToBitmap(requireContext(), pickedImage)
                 bitmap?.let {
@@ -95,10 +99,15 @@ class NewFeedFragment : Fragment() {
                     Glide.with(requireContext())
                         .load(bitmap)
                         .into(binding.feedImage)
+                    file = File(imagePath)
                     Log.d("ImageUpload", "onActivityResult: Path = $path")
                     Log.d("ImageUpload", "onActivityResult: forFile = $pickedImage")
-                    path?.let { it1 -> uploadImage(it1) }
+                    Log.d("ImageUpload", "onActivityResult: $file")
                 }
+            }
+            TODO("Upload image to server")
+            if (imagePath != null) {
+                uploadImage(File(imagePath), imagePath,pickedImage)
             }
             if (path != null) {
                 binding.feedToGallery.visibility = View.GONE
@@ -133,31 +142,72 @@ class NewFeedFragment : Fragment() {
     }
 
 
-    private fun uploadImage(path: String) {
-        Log.d("uploadImage", "uploadImage: $path")
-        val file: File = File(path)
-        val requestBody: RequestBody = RequestBody.create(MediaType.get("image/*"), file)
-        val parts: MultipartBody.Part =
-            MultipartBody.Part.createFormData("newImage", file.name, requestBody)
-        val form = RequestBody.create(MultipartBody.FORM, "2")
-        val notes = RequestBody.create(MultipartBody.FORM, "anyType")
+    private fun uploadImage(file: File, imagePath: String,pickedImage:Uri) {
+       path = uploadImage(pickedImage)
+//        val requestBody: RequestBody = RequestBody.create(MediaType.get("image/*"), file)
+//        val parts: MultipartBody.Part =
+//            MultipartBody.Part.createFormData("newImage", file.name, requestBody)
+////        val form = RequestBody.create(MultipartBody.FORM, "2")
+////        val notes = RequestBody.create(MultipartBody.FORM, "anyType")
+//
+  val cookie = LocalKeyStorage(requireContext()).getValue(LocalKeyStorage.COOKIE).toString()
+//
+//        val fileName: String =
+//            imagePath.subSequence(imagePath.lastIndexOf('/'), imagePath.length).toString()
+//        val body: RequestBody = MultipartBody.Builder().setType(MultipartBody.FORM)
+//            .addFormDataPart(
+//                "file", fileName,
+//                RequestBody.create(
+//                    MediaType.parse("application/octet-stream"),
+//                    file
+//                )
+//            )
+//            .build()
 
-        val cookie = LocalKeyStorage(requireContext()).getValue(LocalKeyStorage.COOKIE).toString()
+        val file = File(imagePath)
 
-//        val someData: RequestBody =
-//            RequestBody.create(MediaType.parse("text/plain"), "This is a new image")
+        val requestFile = RequestBody.create(
+            MediaType.parse(context?.contentResolver?.getType(pickedImage)),
+            file
+        )
 
-        val body: RequestBody = MultipartBody.Builder().setType(MultipartBody.FORM)
-            .addFormDataPart(
-                "file", "wallpaperflare.com_wallpaper.jpg",
-                RequestBody.create(
-                    MediaType.parse("application/octet-stream"),
-                    File(path)
-                )
-            )
-            .build()
+        // MultipartBody.Part is used to send also the actual file name
 
-        viewModel.postFeedImage(parts, cookie)
+        // MultipartBody.Part is used to send also the actual file name
+        val body = MultipartBody.Part.createFormData("picture", file.name, requestFile)
+
+        // add another part within the multipart request
+
+        // add another part within the multipart request
+        val descriptionString = "hello, this is description speaking"
+        val description = RequestBody.create(
+            MultipartBody.FORM, descriptionString
+        )
+
+
+
+        viewModel.postFeedImage(description, body, cookie)
+    }
+
+
+    private fun uploadImage(fileUri: Uri): String? {
+        val filePathColumn =
+            arrayOf(MediaStore.Images.Media.DATA)
+
+        val cursor: Cursor? = activity?.contentResolver?.query(
+            fileUri,
+            filePathColumn, null, null, null
+        )
+        if (cursor != null) {
+            cursor.moveToFirst()
+            val columnIndex: Int = cursor.getColumnIndex(filePathColumn[0])
+            val picturePath: String? = cursor.getString(columnIndex)
+            cursor.close()
+            return picturePath
+           // Log.d("path", picturePath)
+        }
+        return null
+
     }
 
     private fun mUploadImage(path: String) {
@@ -168,6 +218,6 @@ class NewFeedFragment : Fragment() {
         val someData = RequestBody.create(MediaType.parse("text/plain"), "This is a new Image")
         val cookie = LocalKeyStorage(requireContext()).getValue(LocalKeyStorage.COOKIE).toString()
 
-        viewModel.postFeedImage(parts, cookie)
+        //viewModel.postFeedImage(parts, cookie)
     }
 }

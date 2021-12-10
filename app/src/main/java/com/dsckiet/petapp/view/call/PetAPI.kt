@@ -22,9 +22,7 @@ import retrofit2.http.*
 import retrofit2.http.POST
 
 import retrofit2.http.Multipart
-
-
-
+import java.io.File
 
 
 interface PetAPI {
@@ -88,9 +86,10 @@ interface PetAPI {
     @Multipart
     @POST("/user/feed_img_upload/")
     fun postImageUpload(
-        @Part file: MultipartBody.Part,
+        @Part("file") file: RequestBody,
+        @Part multiPartFile : MultipartBody.Part,
         @Header("Cookie") cookie: String
-    ): Call<RequestBody>
+    ): Call<FeedImageUpload>
 
     @POST("/user/feed_create/")
     fun postFeedPost(

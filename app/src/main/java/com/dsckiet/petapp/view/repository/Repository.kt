@@ -204,20 +204,20 @@ class Repository constructor(val application: Application) {
         })
     }
 
-    fun postImageUpload(file: MultipartBody.Part, cookie: String) {
+    fun postImageUpload(file: RequestBody, multipartFile: MultipartBody.Part, cookie: String) {
         val retrofitService = RetrofitInstance.getClient(application)
-        val callAPI = retrofitService.postImageUpload(file, cookie)
+        val callAPI = retrofitService.postImageUpload(file, multipartFile, cookie)
 
-        callAPI.enqueue(object : Callback<RequestBody> {
-            override fun onFailure(call: Call<RequestBody>, t: Throwable) {
+        callAPI.enqueue(object : Callback<FeedImageUpload> {
+            override fun onFailure(call: Call<FeedImageUpload>, t: Throwable) {
                 Toast.makeText(application, "${t.message}", Toast.LENGTH_SHORT).show()
                 Log.d("FeedImageUpload", "onFailure: ${t.message}")
                 Log.d("FeedImageUpload", "onFailure: ${t.cause}")
             }
 
             override fun onResponse(
-                call: Call<RequestBody>,
-                response: Response<RequestBody>
+                call: Call<FeedImageUpload>,
+                response: Response<FeedImageUpload>
             ) {
                 Log.d("FeedImageUpload", "onResponse: $response")
             }
