@@ -6,23 +6,14 @@ import com.dsckiet.petapp.view.model.PostOwnerData
 import com.dsckiet.petapp.view.model.body.CreateEventBody
 import com.dsckiet.petapp.view.model.body.FeedPostBody
 import com.dsckiet.petapp.view.model.body.ForumBody
-import com.dsckiet.petapp.view.model.get.AllEventTypes
-import com.dsckiet.petapp.view.model.get.PetBreed
-import com.dsckiet.petapp.view.model.get.PetCategory
+import com.dsckiet.petapp.view.model.get.*
 import com.dsckiet.petapp.view.model.get.feeds.FeedDataCheck
 import com.dsckiet.petapp.view.model.get.logout.Logout
 import com.dsckiet.petapp.view.model.post.*
-import retrofit2.Call
 import okhttp3.MultipartBody
-
 import okhttp3.RequestBody
-
-import okhttp3.OkHttpClient
+import retrofit2.Call
 import retrofit2.http.*
-import retrofit2.http.POST
-
-import retrofit2.http.Multipart
-import java.io.File
 
 
 interface PetAPI {
@@ -87,7 +78,7 @@ interface PetAPI {
     @POST("/user/feed_img_upload/")
     fun postImageUpload(
         @Part("file") file: RequestBody,
-        @Part multiPartFile : MultipartBody.Part,
+        @Part multiPartFile: MultipartBody.Part,
         @Header("Cookie") cookie: String
     ): Call<FeedImageUpload>
 
@@ -104,15 +95,24 @@ interface PetAPI {
     ): Call<FeedDataCheck>
 
     @POST("/location/save_loc/")
-    fun postLocation(
-        @Body location: Location
-    )
+    fun postSaveLocation(
+        @Body location: Location,
+        @Header("Cookie") cookie: String
+    ): Call<SaveLocation>
 
-    @Multipart
+    @GET("/location/loc_user_render/")
+    fun getGlobalLocation(
+        @Header("Cookie") cookie: String
+    ): Call<GlobalLocation>
+
+    @GET("/location/get_users/")
+    fun getUsers(): Call<Users>
+
+    /*@Multipart
     @POST("upload")
     fun uploadImage(
         @Part part: MultipartBody.Part?,
         @Part("somedata") requestBody: RequestBody?
-    ): Call<RequestBody?>?
+    ): Call<RequestBody?>?*/
 
 }

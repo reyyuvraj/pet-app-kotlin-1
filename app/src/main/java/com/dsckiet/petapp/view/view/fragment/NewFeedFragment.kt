@@ -105,7 +105,6 @@ class NewFeedFragment : Fragment() {
                     Log.d("ImageUpload", "onActivityResult: $file")
                 }
             }
-            TODO("Upload image to server")
             if (imagePath != null) {
                 uploadImage(File(imagePath), imagePath,pickedImage)
             }

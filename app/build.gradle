@@ -113,4 +113,7 @@ dependencies {
     //image upload
     def uploadServiceVersion = "3.5.2"
     implementation "net.gotev:uploadservice:$uploadServiceVersion"
+
+    //location
+    implementation 'com.google.android.gms:play-services-location:19.0.0'
 }
